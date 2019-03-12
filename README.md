@@ -1,4 +1,4 @@
-# Swift House  - 2019 edition
+# ThePushSubscriber  - 2019 edition
 
 With our app the user can  subscribe on hackernews items. 
 The user will be able to view items, filter items and he can also subscribe on categorys. 
