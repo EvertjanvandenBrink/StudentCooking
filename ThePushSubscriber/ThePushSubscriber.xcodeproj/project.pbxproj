@@ -41,6 +41,7 @@
 		C6B7DB7E22382424008CA4E6 /* ThePushSubscriberTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ThePushSubscriberTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C6B7DB8222382424008CA4E6 /* ThePushSubscriberTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThePushSubscriberTests.swift; sourceTree = "<group>"; };
 		C6B7DB8422382424008CA4E6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C6B7DB9322383037008CA4E6 /* Config.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Config.xcconfig; sourceTree = "<group>"; };
 		F7F1D3A8899CEDBFB637D181 /* Pods-ThePushSubscriber.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ThePushSubscriber.debug.xcconfig"; path = "Target Support Files/Pods-ThePushSubscriber/Pods-ThePushSubscriber.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -69,7 +70,6 @@
 				F7F1D3A8899CEDBFB637D181 /* Pods-ThePushSubscriber.debug.xcconfig */,
 				600D9903CAB4F6F1FFC7CB83 /* Pods-ThePushSubscriber.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -112,6 +112,7 @@
 				C6B7DB7422382424008CA4E6 /* Assets.xcassets */,
 				C6B7DB7622382424008CA4E6 /* LaunchScreen.storyboard */,
 				C6B7DB7922382424008CA4E6 /* Info.plist */,
+				C6B7DB9322383037008CA4E6 /* Config.xcconfig */,
 			);
 			path = ThePushSubscriber;
 			sourceTree = "<group>";
