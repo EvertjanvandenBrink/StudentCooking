@@ -14,6 +14,7 @@
 		C6B7DB7522382424008CA4E6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C6B7DB7422382424008CA4E6 /* Assets.xcassets */; };
 		C6B7DB7822382424008CA4E6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C6B7DB7622382424008CA4E6 /* LaunchScreen.storyboard */; };
 		C6B7DB8322382424008CA4E6 /* ThePushSubscriberTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6B7DB8222382424008CA4E6 /* ThePushSubscriberTests.swift */; };
+		DF8A919A011D895251D9F598 /* Pods_ThePushSubscriber.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B95CA7F6A4F425700F0CAF4C /* Pods_ThePushSubscriber.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -27,6 +28,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		600D9903CAB4F6F1FFC7CB83 /* Pods-ThePushSubscriber.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ThePushSubscriber.release.xcconfig"; path = "Target Support Files/Pods-ThePushSubscriber/Pods-ThePushSubscriber.release.xcconfig"; sourceTree = "<group>"; };
+		B95CA7F6A4F425700F0CAF4C /* Pods_ThePushSubscriber.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ThePushSubscriber.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C6B7DB6822382423008CA4E6 /* ThePushSubscriber.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ThePushSubscriber.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C6B7DB6B22382423008CA4E6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C6B7DB6D22382423008CA4E6 /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
@@ -38,6 +41,7 @@
 		C6B7DB7E22382424008CA4E6 /* ThePushSubscriberTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ThePushSubscriberTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C6B7DB8222382424008CA4E6 /* ThePushSubscriberTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThePushSubscriberTests.swift; sourceTree = "<group>"; };
 		C6B7DB8422382424008CA4E6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F7F1D3A8899CEDBFB637D181 /* Pods-ThePushSubscriber.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ThePushSubscriber.debug.xcconfig"; path = "Target Support Files/Pods-ThePushSubscriber/Pods-ThePushSubscriber.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -45,6 +49,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DF8A919A011D895251D9F598 /* Pods_ThePushSubscriber.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -58,12 +63,31 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		07AB70605A545726D5DB293F /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				F7F1D3A8899CEDBFB637D181 /* Pods-ThePushSubscriber.debug.xcconfig */,
+				600D9903CAB4F6F1FFC7CB83 /* Pods-ThePushSubscriber.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		30EA2B2B072AD7F9ADC245BA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B95CA7F6A4F425700F0CAF4C /* Pods_ThePushSubscriber.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		C6B7DB5F22382423008CA4E6 = {
 			isa = PBXGroup;
 			children = (
 				C6B7DB6A22382423008CA4E6 /* ThePushSubscriber */,
 				C6B7DB8122382424008CA4E6 /* ThePushSubscriberTests */,
 				C6B7DB6922382423008CA4E6 /* Products */,
+				07AB70605A545726D5DB293F /* Pods */,
+				30EA2B2B072AD7F9ADC245BA /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -79,9 +103,10 @@
 		C6B7DB6A22382423008CA4E6 /* ThePushSubscriber */ = {
 			isa = PBXGroup;
 			children = (
+				C6B7DB9222382A16008CA4E6 /* Models */,
+				C6B7DB9122382A09008CA4E6 /* Views */,
+				C6B7DB90223829F6008CA4E6 /* Controllers */,
 				C6B7DB6B22382423008CA4E6 /* AppDelegate.swift */,
-				C6B7DB6D22382423008CA4E6 /* FirstViewController.swift */,
-				C6B7DB6F22382423008CA4E6 /* SecondViewController.swift */,
 				C6B7DB7122382423008CA4E6 /* Main.storyboard */,
 				C6B7DB7422382424008CA4E6 /* Assets.xcassets */,
 				C6B7DB7622382424008CA4E6 /* LaunchScreen.storyboard */,
@@ -99,6 +124,29 @@
 			path = ThePushSubscriberTests;
 			sourceTree = "<group>";
 		};
+		C6B7DB90223829F6008CA4E6 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				C6B7DB6D22382423008CA4E6 /* FirstViewController.swift */,
+				C6B7DB6F22382423008CA4E6 /* SecondViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		C6B7DB9122382A09008CA4E6 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		C6B7DB9222382A16008CA4E6 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -106,9 +154,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = C6B7DB8722382424008CA4E6 /* Build configuration list for PBXNativeTarget "ThePushSubscriber" */;
 			buildPhases = (
+				3B52117F8A15BE659BFF4DB6 /* [CP] Check Pods Manifest.lock */,
 				C6B7DB6422382423008CA4E6 /* Sources */,
 				C6B7DB6522382423008CA4E6 /* Frameworks */,
 				C6B7DB6622382423008CA4E6 /* Resources */,
+				71CF3C2F0523E36E144ED916 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -194,6 +244,53 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		3B52117F8A15BE659BFF4DB6 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ThePushSubscriber-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		71CF3C2F0523E36E144ED916 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ThePushSubscriber/Pods-ThePushSubscriber-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ThePushSubscriber/Pods-ThePushSubscriber-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		C6B7DB6422382423008CA4E6 /* Sources */ = {
@@ -362,6 +459,7 @@
 		};
 		C6B7DB8822382424008CA4E6 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F7F1D3A8899CEDBFB637D181 /* Pods-ThePushSubscriber.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -380,6 +478,7 @@
 		};
 		C6B7DB8922382424008CA4E6 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 600D9903CAB4F6F1FFC7CB83 /* Pods-ThePushSubscriber.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
