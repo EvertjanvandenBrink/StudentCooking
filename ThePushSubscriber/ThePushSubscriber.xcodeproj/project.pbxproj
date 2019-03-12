@@ -83,8 +83,6 @@
 				C6B7DB9122382A09008CA4E6 /* Views */,
 				C6B7DB90223829F6008CA4E6 /* Controllers */,
 				C6B7DB6B22382423008CA4E6 /* AppDelegate.swift */,
-				C6B7DB6D22382423008CA4E6 /* FirstViewController.swift */,
-				C6B7DB6F22382423008CA4E6 /* SecondViewController.swift */,
 				C6B7DB7122382423008CA4E6 /* Main.storyboard */,
 				C6B7DB7422382424008CA4E6 /* Assets.xcassets */,
 				C6B7DB7622382424008CA4E6 /* LaunchScreen.storyboard */,
@@ -105,6 +103,8 @@
 		C6B7DB90223829F6008CA4E6 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				C6B7DB6D22382423008CA4E6 /* FirstViewController.swift */,
+				C6B7DB6F22382423008CA4E6 /* SecondViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
