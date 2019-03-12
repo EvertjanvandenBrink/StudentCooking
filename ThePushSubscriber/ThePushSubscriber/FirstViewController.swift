@@ -19,4 +19,3 @@ class FirstViewController: UIViewController {
         print("Device was shaken!")
     }
 }
-

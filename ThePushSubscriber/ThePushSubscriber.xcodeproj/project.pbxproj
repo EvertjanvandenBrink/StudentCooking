@@ -79,6 +79,9 @@
 		C6B7DB6A22382423008CA4E6 /* ThePushSubscriber */ = {
 			isa = PBXGroup;
 			children = (
+				C6B7DB9222382A16008CA4E6 /* Models */,
+				C6B7DB9122382A09008CA4E6 /* Views */,
+				C6B7DB90223829F6008CA4E6 /* Controllers */,
 				C6B7DB6B22382423008CA4E6 /* AppDelegate.swift */,
 				C6B7DB6D22382423008CA4E6 /* FirstViewController.swift */,
 				C6B7DB6F22382423008CA4E6 /* SecondViewController.swift */,
@@ -97,6 +100,27 @@
 				C6B7DB8422382424008CA4E6 /* Info.plist */,
 			);
 			path = ThePushSubscriberTests;
+			sourceTree = "<group>";
+		};
+		C6B7DB90223829F6008CA4E6 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		C6B7DB9122382A09008CA4E6 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		C6B7DB9222382A16008CA4E6 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
