@@ -22,6 +22,8 @@ So the user will be able to subscribe on for example houses.
 
 * **[3. Release history](#Release_History)**
 
+* **[4. Requirements](#Requirements)**
+
 ## 1. Prerequisites <a name="Prerequisites"/>
 
 This application is written in Swift. 
@@ -65,3 +67,25 @@ Now	you	can	run	your project again by clicking the Run button or through Product
 - 0.1.0
   - Filled the empty readMe file
   - 12 March 2019
+
+## 4. Requirements <a name="Requirements"/>
+
+- [ ] The user can subscribe on categorys 
+- [ ] The user can view all current hn items
+- [ ] The user can refresh by pulling down
+- [ ] The user can view a list of subscriptions
+- [ ] The user can remove subscriptions
+- [ ] The user retrieves notificationsbased on new subscribed items
+- [ ] The user can give permision to use the accelerometor to shake the device and get an subscribed recommendation
+- [ ] The user can use the app omn different types of api's.
+- [ ] The user can search items
+- [ ] The user can filter items
+
+API's:
+- Hackernews api
+
+Frameworks:
+- CoreMotion 
+- pods (alamofire & sweiftyjson)
+
+Screen layout
