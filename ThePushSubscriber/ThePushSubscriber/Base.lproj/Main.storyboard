@@ -75,7 +75,7 @@
             </objects>
             <point key="canvasLocation" x="750" y="-370"/>
         </scene>
-        <!--Root View Controller-->
+        <!--Settings-->
         <scene sceneID="GwP-VB-sQm">
             <objects>
                 <tableViewController id="Pte-PH-IkM" sceneMemberID="viewController">
@@ -98,7 +98,7 @@
                             <outlet property="delegate" destination="Pte-PH-IkM" id="YxV-Kk-TW2"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Root View Controller" id="gOn-dH-VOZ"/>
+                    <navigationItem key="navigationItem" title="Settings" id="gOn-dH-VOZ"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Jaw-3B-8J5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -193,6 +193,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="x87-Vn-Trr"/>
+        <segue reference="YaR-FV-XaZ"/>
     </inferredMetricsTieBreakers>
 </document>
