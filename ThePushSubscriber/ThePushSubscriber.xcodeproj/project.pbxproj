@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C6B6D672223A63C90096D08E /* HackerNewsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6B6D671223A63C90096D08E /* HackerNewsService.swift */; };
+		C6B6D674223A680D0096D08E /* TopStoriesModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6B6D673223A680D0096D08E /* TopStoriesModels.swift */; };
 		C6B7DB6C22382423008CA4E6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6B7DB6B22382423008CA4E6 /* AppDelegate.swift */; };
 		C6B7DB6E22382423008CA4E6 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6B7DB6D22382423008CA4E6 /* FirstViewController.swift */; };
 		C6B7DB7022382423008CA4E6 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6B7DB6F22382423008CA4E6 /* SecondViewController.swift */; };
@@ -30,6 +32,8 @@
 /* Begin PBXFileReference section */
 		600D9903CAB4F6F1FFC7CB83 /* Pods-ThePushSubscriber.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ThePushSubscriber.release.xcconfig"; path = "Target Support Files/Pods-ThePushSubscriber/Pods-ThePushSubscriber.release.xcconfig"; sourceTree = "<group>"; };
 		B95CA7F6A4F425700F0CAF4C /* Pods_ThePushSubscriber.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ThePushSubscriber.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C6B6D671223A63C90096D08E /* HackerNewsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HackerNewsService.swift; sourceTree = "<group>"; };
+		C6B6D673223A680D0096D08E /* TopStoriesModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopStoriesModels.swift; sourceTree = "<group>"; };
 		C6B7DB6822382423008CA4E6 /* ThePushSubscriber.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ThePushSubscriber.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C6B7DB6B22382423008CA4E6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C6B7DB6D22382423008CA4E6 /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
@@ -80,6 +84,14 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		C6B6D670223A638A0096D08E /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				C6B6D671223A63C90096D08E /* HackerNewsService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
 		C6B7DB5F22382423008CA4E6 = {
 			isa = PBXGroup;
 			children = (
@@ -103,6 +115,7 @@
 		C6B7DB6A22382423008CA4E6 /* ThePushSubscriber */ = {
 			isa = PBXGroup;
 			children = (
+				C6B6D670223A638A0096D08E /* Services */,
 				C6B7DB9222382A16008CA4E6 /* Models */,
 				C6B7DB9122382A09008CA4E6 /* Views */,
 				C6B7DB90223829F6008CA4E6 /* Controllers */,
@@ -143,6 +156,7 @@
 		C6B7DB9222382A16008CA4E6 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				C6B6D673223A680D0096D08E /* TopStoriesModels.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -299,6 +313,8 @@
 			files = (
 				C6B7DB7022382423008CA4E6 /* SecondViewController.swift in Sources */,
 				C6B7DB6C22382423008CA4E6 /* AppDelegate.swift in Sources */,
+				C6B6D672223A63C90096D08E /* HackerNewsService.swift in Sources */,
+				C6B6D674223A680D0096D08E /* TopStoriesModels.swift in Sources */,
 				C6B7DB6E22382423008CA4E6 /* FirstViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
