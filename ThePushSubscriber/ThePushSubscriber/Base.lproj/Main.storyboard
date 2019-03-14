@@ -10,10 +10,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Detail View Controller-->
         <scene sceneID="2Qv-3i-W96">
             <objects>
-                <viewController hidesBottomBarWhenPushed="YES" id="PC7-GY-IHU" sceneMemberID="viewController">
+                <viewController hidesBottomBarWhenPushed="YES" id="PC7-GY-IHU" customClass="DetailViewController" customModule="ThePushSubscriber" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="w8C-xi-SJn">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -28,7 +28,7 @@
         <!--All Stories-->
         <scene sceneID="w4j-fX-ne3">
             <objects>
-                <tableViewController id="ISL-10-0pH" sceneMemberID="viewController">
+                <tableViewController id="ISL-10-0pH" customClass="AllStoriesViewController" customModule="ThePushSubscriber" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="h6n-VR-1yl">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -75,10 +75,10 @@
             </objects>
             <point key="canvasLocation" x="750" y="-370"/>
         </scene>
-        <!--Root View Controller-->
+        <!--Settings-->
         <scene sceneID="GwP-VB-sQm">
             <objects>
-                <tableViewController id="Pte-PH-IkM" sceneMemberID="viewController">
+                <tableViewController id="Pte-PH-IkM" customClass="SettingsViewController" customModule="ThePushSubscriber" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="XKR-aW-Gly">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -98,7 +98,7 @@
                             <outlet property="delegate" destination="Pte-PH-IkM" id="YxV-Kk-TW2"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Root View Controller" id="gOn-dH-VOZ"/>
+                    <navigationItem key="navigationItem" title="Settings" id="gOn-dH-VOZ"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Jaw-3B-8J5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -144,7 +144,7 @@
         <!--Subscriptions-->
         <scene sceneID="eRo-6m-Z3E">
             <objects>
-                <tableViewController id="gLN-ug-IzG" customClass="SecondViewController" customModule="ThePushSubscriber" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="gLN-ug-IzG" customClass="SubscriptionsViewController" customModule="ThePushSubscriber" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="0kA-oR-G3c">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -193,6 +193,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="x87-Vn-Trr"/>
+        <segue reference="YaR-FV-XaZ"/>
     </inferredMetricsTieBreakers>
 </document>
