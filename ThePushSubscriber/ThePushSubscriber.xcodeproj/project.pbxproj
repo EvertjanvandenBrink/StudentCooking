@@ -10,6 +10,7 @@
 		C6B6D672223A63C90096D08E /* HackerNewsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6B6D671223A63C90096D08E /* HackerNewsService.swift */; };
 		C6B6D674223A680D0096D08E /* TopStoriesModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6B6D673223A680D0096D08E /* TopStoriesModels.swift */; };
 		C6B6D678223A75EA0096D08E /* AllStoriesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6B6D677223A75EA0096D08E /* AllStoriesViewController.swift */; };
+		C6B6D67A223A79410096D08E /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6B6D679223A79410096D08E /* DetailViewController.swift */; };
 		C6B7DB6C22382423008CA4E6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6B7DB6B22382423008CA4E6 /* AppDelegate.swift */; };
 		C6B7DB6E22382423008CA4E6 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6B7DB6D22382423008CA4E6 /* SettingsViewController.swift */; };
 		C6B7DB7022382423008CA4E6 /* SubscriptionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6B7DB6F22382423008CA4E6 /* SubscriptionsViewController.swift */; };
@@ -36,6 +37,7 @@
 		C6B6D671223A63C90096D08E /* HackerNewsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HackerNewsService.swift; sourceTree = "<group>"; };
 		C6B6D673223A680D0096D08E /* TopStoriesModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopStoriesModels.swift; sourceTree = "<group>"; };
 		C6B6D677223A75EA0096D08E /* AllStoriesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllStoriesViewController.swift; sourceTree = "<group>"; };
+		C6B6D679223A79410096D08E /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		C6B7DB6822382423008CA4E6 /* ThePushSubscriber.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ThePushSubscriber.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C6B7DB6B22382423008CA4E6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C6B7DB6D22382423008CA4E6 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
@@ -145,6 +147,7 @@
 				C6B7DB6D22382423008CA4E6 /* SettingsViewController.swift */,
 				C6B7DB6F22382423008CA4E6 /* SubscriptionsViewController.swift */,
 				C6B6D677223A75EA0096D08E /* AllStoriesViewController.swift */,
+				C6B6D679223A79410096D08E /* DetailViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -320,6 +323,7 @@
 				C6B6D674223A680D0096D08E /* TopStoriesModels.swift in Sources */,
 				C6B6D678223A75EA0096D08E /* AllStoriesViewController.swift in Sources */,
 				C6B7DB6E22382423008CA4E6 /* SettingsViewController.swift in Sources */,
+				C6B6D67A223A79410096D08E /* DetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
