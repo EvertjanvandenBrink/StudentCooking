@@ -1,15 +1,14 @@
-# ThePushSubscriber  - 2019 edition
+# StudentCoocking App - 2019 edition
 
-With our app the user can  subscribe on hackernews items. 
-The user will be able to view items, filter items and he can also subscribe on categorys. 
-the user will receive a push notification when he is subscribed on a specific category and there is a new relevant
-item posted in that category. 
+Studenten kunnen middels deze app hun ingredienten laten herkennen. Vervolgens zal de app met 1 of kmeerdere recepten komen. De gerbuiker kan vervolgens 1 van die recpten selecteren. De app zal dan de missende ingredienten direct aan het Albert Heijn winkelmandje toevoegen zodat de gebruiker deze direct kan bestellen. 
 
-Possible expansions
-If there is time left we will try to create a sublayer which will parse the received api items so that it is possible to use different api's.
-So the user will be able to subscribe on for example houses. 
+Verder kian de gebruiker door alle recepten heenscrollen en recepten bekijken.
+Ook kan de gebruiker zijn device schudden, de app zal dan met een aanbeveling komen. Dit is erg handig aangezien studenten vaak niet weten wat ze willen gaan eten. 
 
-## Table of Contents
+Mogelijke uitbreidingen:
+- De gebruiker kan subscriben op bepaalcde ingredienten of categorieën zodat hij push notificaties ontvangt zodra er een nieuw recept binnenkomt waar het betreffende ingredient in wordt gebruikt. 
+
+## Inhoudsopgave
 
 * **[1. Prerequisites](#Prerequisites)**
 
@@ -70,22 +69,24 @@ Now	you	can	run	your project again by clicking the Run button or through Product
 
 ## 4. Requirements <a name="Requirements"/>
 
-- [ ] The user can subscribe on categorys 
-- [ ] The user can view all current hn items
-- [ ] The user can refresh by pulling down
-- [ ] The user can view a list of subscriptions
-- [ ] The user can remove subscriptions
-- [ ] The user retrieves notificationsbased on new subscribed items
-- [ ] The user can give permision to use the accelerometor to shake the device and get an subscribed recommendation
-- [ ] The user can use the app omn different types of api's.
-- [ ] The user can search items
-- [ ] The user can filter items
+- [ ] De gebruiker kan ingredienten laten herkennen
+- [ ] De gebruiker kan recepten bekijken
+- [ ] De gebruiker kan ingredienten toevoegen aan albert heijn winkelwagen
+- [ ] De gebruiker kan recepten doorzoeken en filteren
+- [ ] De gebruiker kan een willekeurig recept opvragen
+- [ ] De gebruiker kan recepten aan favorieten toevoegen
+Uitbreidingen
+- [ ] De gebruiker kan subscriben op categorieen en ingredienten
 
 API's:
-- Hackernews api
+- https://www.food2fork.com/ --> voor recepten
 
-Frameworks:
-- CoreMotion 
-- pods (alamofire & sweiftyjson)
+Frameworks: 
+- pods (alamofire & swiftyjson) voor de api calls
+
+add-to-list widget
+
+OCR voor het herkennen van ingredienten
+
 
 Screen layout
