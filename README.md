@@ -86,7 +86,10 @@ Frameworks:
 
 add-to-list widget
 
-OCR voor het herkennen van ingredienten
+Voor het herkennen van ingredienten:
+- OCR
+- Image recognition (coreML)
+- Barcode scannen en uitlezen uit een api
 
 
 Screen layout
