@@ -80,6 +80,8 @@ Uitbreidingen
 
 API's:
 - https://www.food2fork.com/ --> voor recepten
+- https://developer.nutritionix.com/docs/v2 --> evt. voor nutrition informatie bij ingredienten/recepten
+- https://www.veggipedia.nl/recepten/ --> voor ingredienten en recepten
 
 Frameworks: 
 - pods (alamofire & swiftyjson) voor de api calls
