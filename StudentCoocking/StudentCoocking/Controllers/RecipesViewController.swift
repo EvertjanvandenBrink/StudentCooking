@@ -17,6 +17,6 @@ class RecipesViewController: UIViewController {
     
     override func motionBegan(_ motion: UIEvent.EventSubtype, with event: UIEvent?) {
         print("You should get a rndon recipe!")
+        TheMealDBService().fetchRandomMeal()
     }
-    
 }

@@ -23,6 +23,7 @@
 		C6CA66182245106A00AA37B6 /* RecipesDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6CA66172245106A00AA37B6 /* RecipesDetailViewController.swift */; };
 		C6CA661B2245161000AA37B6 /* RecipesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6CA661A2245161000AA37B6 /* RecipesModel.swift */; };
 		C6CA661D2245162900AA37B6 /* IngredientsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6CA661C2245162900AA37B6 /* IngredientsModel.swift */; };
+		C6CA661F224517F700AA37B6 /* TheMealDBService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6CA661E224517F700AA37B6 /* TheMealDBService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,6 +70,7 @@
 		C6CA66172245106A00AA37B6 /* RecipesDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipesDetailViewController.swift; sourceTree = "<group>"; };
 		C6CA661A2245161000AA37B6 /* RecipesModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipesModel.swift; sourceTree = "<group>"; };
 		C6CA661C2245162900AA37B6 /* IngredientsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngredientsModel.swift; sourceTree = "<group>"; };
+		C6CA661E224517F700AA37B6 /* TheMealDBService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TheMealDBService.swift; sourceTree = "<group>"; };
 		E14CB1EB2899FB56E70BD718 /* Pods_StudentCoockingUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_StudentCoockingUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EDC71F42B4FF50A11CE9A182 /* Pods-StudentCoockingUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StudentCoockingUITests.debug.xcconfig"; path = "Target Support Files/Pods-StudentCoockingUITests/Pods-StudentCoockingUITests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -198,6 +200,7 @@
 		C6CA6619224515DD00AA37B6 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				C6CA661E224517F700AA37B6 /* TheMealDBService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -443,6 +446,7 @@
 			files = (
 				C68578E7224508FC004217D5 /* SettingsViewController.swift in Sources */,
 				C6CA661B2245161000AA37B6 /* RecipesModel.swift in Sources */,
+				C6CA661F224517F700AA37B6 /* TheMealDBService.swift in Sources */,
 				C68578E3224508FC004217D5 /* AppDelegate.swift in Sources */,
 				C68578E5224508FC004217D5 /* HomeViewController.swift in Sources */,
 				C6CA66182245106A00AA37B6 /* RecipesDetailViewController.swift in Sources */,
