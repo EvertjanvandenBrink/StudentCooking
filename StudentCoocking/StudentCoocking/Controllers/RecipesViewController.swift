@@ -1,5 +1,5 @@
 //
-//  SecondViewController.swift
+//  RecipesViewController.swift
 //  StudentCoocking
 //
 //  Created by Evertjan van den Brink on 22/03/2019.
@@ -8,13 +8,12 @@
 
 import UIKit
 
-class SecondViewController: UIViewController {
-
+class RecipesViewController: UIViewController {
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
     }
-
-
+    
+    
 }
-
