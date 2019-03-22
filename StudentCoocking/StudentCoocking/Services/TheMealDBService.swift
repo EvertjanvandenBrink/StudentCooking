@@ -22,9 +22,22 @@ class TheMealDBService {
         }
     }
     
+    func fetchAllIngredients() {
+        Alamofire.request(getData(url: "list.php?i=list")).responseJSON { (resData) -> Void in
+            print(resData.result.value!)
+        }
+    }
+    
     func fetchRandomMeal() {
         Alamofire.request(getData(url: "random.php")).responseJSON { (resData) -> Void in
             print(resData.result.value!)
+            do {
+                let ingredients = try JSONDecoder().decode(Ingredients.self, from: resData.data as! Data) // Decoding our data
+                print("decoded ingredients")
+                print(ingredients) // decoded!!!!!
+            } catch {
+                print("JSONSerialization error:", error)
+            }
         }
     }
     

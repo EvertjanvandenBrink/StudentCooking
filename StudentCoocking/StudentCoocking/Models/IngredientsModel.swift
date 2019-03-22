@@ -6,8 +6,8 @@
 //  Copyright © 2019 Evertjan van den Brink. All rights reserved.
 //
 
-struct Meals: Codable {
-    let meals: [Ingredient]
+struct Ingredients: Codable {
+    let ingredients: [Ingredient]
 }
 
 struct Ingredient: Codable {
