@@ -6,4 +6,11 @@
 //  Copyright © 2019 Evertjan van den Brink. All rights reserved.
 //
 
-import Foundation
+struct Meals: Codable {
+    let meals: [Ingredient]
+}
+
+struct Ingredient: Codable {
+    let idIngredient, strIngredient: String
+    let strDescription, strType: String?
+}
