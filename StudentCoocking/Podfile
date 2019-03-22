@@ -1,0 +1,16 @@
+platform :ios, '10.3'
+ use_frameworks!
+ 
+ target 'StudentCoocking' do		
+   pod 'Alamofire', '~> 4.7'
+ end
+
+target 'StudentCoockingTests' do
+    inherit! :search_paths
+    # Pods for testing
+  end
+
+  target 'StudentCoockingUITests' do
+    inherit! :search_paths
+    # Pods for testing
+  end
