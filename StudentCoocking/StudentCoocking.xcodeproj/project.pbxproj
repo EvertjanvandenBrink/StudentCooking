@@ -21,6 +21,8 @@
 		C6CA661422450C0900AA37B6 /* ScannerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6CA661322450C0900AA37B6 /* ScannerViewController.swift */; };
 		C6CA661622450F9100AA37B6 /* RecipesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6CA661522450F9100AA37B6 /* RecipesViewController.swift */; };
 		C6CA66182245106A00AA37B6 /* RecipesDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6CA66172245106A00AA37B6 /* RecipesDetailViewController.swift */; };
+		C6CA661B2245161000AA37B6 /* RecipesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6CA661A2245161000AA37B6 /* RecipesModel.swift */; };
+		C6CA661D2245162900AA37B6 /* IngredientsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6CA661C2245162900AA37B6 /* IngredientsModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,6 +67,8 @@
 		C6CA661322450C0900AA37B6 /* ScannerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScannerViewController.swift; sourceTree = "<group>"; };
 		C6CA661522450F9100AA37B6 /* RecipesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipesViewController.swift; sourceTree = "<group>"; };
 		C6CA66172245106A00AA37B6 /* RecipesDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipesDetailViewController.swift; sourceTree = "<group>"; };
+		C6CA661A2245161000AA37B6 /* RecipesModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipesModel.swift; sourceTree = "<group>"; };
+		C6CA661C2245162900AA37B6 /* IngredientsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngredientsModel.swift; sourceTree = "<group>"; };
 		E14CB1EB2899FB56E70BD718 /* Pods_StudentCoockingUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_StudentCoockingUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EDC71F42B4FF50A11CE9A182 /* Pods-StudentCoockingUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StudentCoockingUITests.debug.xcconfig"; path = "Target Support Files/Pods-StudentCoockingUITests/Pods-StudentCoockingUITests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -132,6 +136,7 @@
 		C68578E1224508FC004217D5 /* StudentCoocking */ = {
 			isa = PBXGroup;
 			children = (
+				C6CA6619224515DD00AA37B6 /* Services */,
 				C6CA661222450B7100AA37B6 /* Views */,
 				C6CA661122450B6500AA37B6 /* Models */,
 				C6CA661022450B5500AA37B6 /* Controllers */,
@@ -177,6 +182,8 @@
 		C6CA661122450B6500AA37B6 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				C6CA661A2245161000AA37B6 /* RecipesModel.swift */,
+				C6CA661C2245162900AA37B6 /* IngredientsModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -186,6 +193,13 @@
 			children = (
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		C6CA6619224515DD00AA37B6 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 		F84F7C307DD5940C25958FBC /* Pods */ = {
@@ -428,10 +442,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				C68578E7224508FC004217D5 /* SettingsViewController.swift in Sources */,
+				C6CA661B2245161000AA37B6 /* RecipesModel.swift in Sources */,
 				C68578E3224508FC004217D5 /* AppDelegate.swift in Sources */,
 				C68578E5224508FC004217D5 /* HomeViewController.swift in Sources */,
 				C6CA66182245106A00AA37B6 /* RecipesDetailViewController.swift in Sources */,
 				C6CA661622450F9100AA37B6 /* RecipesViewController.swift in Sources */,
+				C6CA661D2245162900AA37B6 /* IngredientsModel.swift in Sources */,
 				C6CA661422450C0900AA37B6 /* ScannerViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -15,5 +15,8 @@ class RecipesViewController: UIViewController {
         // Do any additional setup after loading the view, typically from a nib.
     }
     
+    override func motionBegan(_ motion: UIEvent.EventSubtype, with event: UIEvent?) {
+        print("You should get a rndon recipe!")
+    }
     
 }
