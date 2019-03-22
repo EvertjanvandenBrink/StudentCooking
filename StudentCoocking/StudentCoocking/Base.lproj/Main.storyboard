@@ -26,6 +26,35 @@
             </objects>
             <point key="canvasLocation" x="1020" y="-554"/>
         </scene>
+        <!--IngredientsTableViewController-->
+        <scene sceneID="JIv-hK-wsb">
+            <objects>
+                <tableViewController title="IngredientsTableViewController" id="gad-Ol-cmD" customClass="IngredientsTableViewController" customModule="StudentCoocking" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="hY8-q3-Uaa">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="K3i-wH-0hZ">
+                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="K3i-wH-0hZ" id="rVu-mQ-POD">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="gad-Ol-cmD" id="6xV-5O-msU"/>
+                            <outlet property="delegate" destination="gad-Ol-cmD" id="w16-r1-RgA"/>
+                        </connections>
+                    </tableView>
+                    <tabBarItem key="tabBarItem" title="Ingredients" id="G22-Mh-MvU"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4pQ-gu-cR9" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1028" y="119"/>
+        </scene>
         <!--SettingsViewController-->
         <scene sceneID="YGr-cu-E8y">
             <objects>
@@ -40,7 +69,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3oV-8a-iM8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1020" y="125"/>
+            <point key="canvasLocation" x="1028" y="789"/>
         </scene>
         <!--HomeViewController-->
         <scene sceneID="8eN-uL-n9G">
@@ -103,6 +132,7 @@
                         <segue destination="ZdF-FC-ROe" kind="relationship" relationship="viewControllers" id="T1G-Yr-rjr"/>
                         <segue destination="Mht-Ma-2ER" kind="relationship" relationship="viewControllers" id="E6q-zD-g6K"/>
                         <segue destination="1cq-Rb-esq" kind="relationship" relationship="viewControllers" id="nd9-e9-iS2"/>
+                        <segue destination="gad-Ol-cmD" kind="relationship" relationship="viewControllers" id="Fss-re-pug"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kpN-hL-NZp" userLabel="First Responder" sceneMemberID="firstResponder"/>
