@@ -12,9 +12,14 @@ class IngredientsTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        TheMealDBService().fetchAllIngredients();
+        let env = ApiEnvironment.production
+        let context = NonPersistentApiContext(environment: env)
+        let service = AlamofireIngredientService(context: context)
+        service.getAllIngredients() { (ingredients, error) in
+            if let error = error { return print(error.localizedDescription) }
+            print("Found \(ingredients.count) ingredients:")
+            ingredients.forEach { print("   \($0.name)") }
+        }
     }
     
 }
-

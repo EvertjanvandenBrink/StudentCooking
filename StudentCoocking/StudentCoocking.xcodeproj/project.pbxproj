@@ -11,6 +11,14 @@
 		96731059105A32A358416BB9 /* Pods_StudentCoocking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A628B350A9990447C3B00057 /* Pods_StudentCoocking.framework */; };
 		B5A88F5BDED43F8F5613CE94 /* Pods_StudentCoockingTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 513AF1AA507C1F1A5AEFF8CF /* Pods_StudentCoockingTests.framework */; };
 		C6728FE72248E42100260B90 /* Array+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6728FE62248E42100260B90 /* Array+Extensions.swift */; };
+		C6728FE92248E97300260B90 /* IngredientService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6728FE82248E97300260B90 /* IngredientService.swift */; };
+		C6728FEC2248EA9D00260B90 /* ApiIngredient.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6728FEB2248EA9D00260B90 /* ApiIngredient.swift */; };
+		C6728FEE2248EBFF00260B90 /* ApiEnvironment.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6728FED2248EBFF00260B90 /* ApiEnvironment.swift */; };
+		C6728FF02248EC5200260B90 /* ApiRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6728FEF2248EC5200260B90 /* ApiRoute.swift */; };
+		C6728FF32248EE4700260B90 /* ApiContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6728FF22248EE4700260B90 /* ApiContext.swift */; };
+		C6728FF52248EE6200260B90 /* NonPersistentApiContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6728FF42248EE6200260B90 /* NonPersistentApiContext.swift */; };
+		C6728FF82248EEA100260B90 /* AlamofireService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6728FF72248EEA100260B90 /* AlamofireService.swift */; };
+		C6728FFB2248EF2C00260B90 /* AlamofireIngredientService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6728FFA2248EF2C00260B90 /* AlamofireIngredientService.swift */; };
 		C68578E3224508FC004217D5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C68578E2224508FC004217D5 /* AppDelegate.swift */; };
 		C68578E5224508FC004217D5 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C68578E4224508FC004217D5 /* HomeViewController.swift */; };
 		C68578E7224508FC004217D5 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C68578E6224508FC004217D5 /* SettingsViewController.swift */; };
@@ -22,8 +30,8 @@
 		C6CA661422450C0900AA37B6 /* ScannerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6CA661322450C0900AA37B6 /* ScannerViewController.swift */; };
 		C6CA661622450F9100AA37B6 /* RecipesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6CA661522450F9100AA37B6 /* RecipesViewController.swift */; };
 		C6CA66182245106A00AA37B6 /* RecipesDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6CA66172245106A00AA37B6 /* RecipesDetailViewController.swift */; };
-		C6CA661B2245161000AA37B6 /* RecipesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6CA661A2245161000AA37B6 /* RecipesModel.swift */; };
-		C6CA661D2245162900AA37B6 /* IngredientsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6CA661C2245162900AA37B6 /* IngredientsModel.swift */; };
+		C6CA661B2245161000AA37B6 /* Recipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6CA661A2245161000AA37B6 /* Recipe.swift */; };
+		C6CA661D2245162900AA37B6 /* Ingredient.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6CA661C2245162900AA37B6 /* Ingredient.swift */; };
 		C6CA661F224517F700AA37B6 /* TheMealDBService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6CA661E224517F700AA37B6 /* TheMealDBService.swift */; };
 		C6CA662122451C6400AA37B6 /* IngredientsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6CA662022451C6400AA37B6 /* IngredientsTableViewController.swift */; };
 /* End PBXBuildFile section */
@@ -54,6 +62,14 @@
 		A628B350A9990447C3B00057 /* Pods_StudentCoocking.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_StudentCoocking.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B0A45C69281BDC47EB5FEFE2 /* Pods-StudentCoockingTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StudentCoockingTests.release.xcconfig"; path = "Target Support Files/Pods-StudentCoockingTests/Pods-StudentCoockingTests.release.xcconfig"; sourceTree = "<group>"; };
 		C6728FE62248E42100260B90 /* Array+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Extensions.swift"; sourceTree = "<group>"; };
+		C6728FE82248E97300260B90 /* IngredientService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngredientService.swift; sourceTree = "<group>"; };
+		C6728FEB2248EA9D00260B90 /* ApiIngredient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiIngredient.swift; sourceTree = "<group>"; };
+		C6728FED2248EBFF00260B90 /* ApiEnvironment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiEnvironment.swift; sourceTree = "<group>"; };
+		C6728FEF2248EC5200260B90 /* ApiRoute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiRoute.swift; sourceTree = "<group>"; };
+		C6728FF22248EE4700260B90 /* ApiContext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiContext.swift; sourceTree = "<group>"; };
+		C6728FF42248EE6200260B90 /* NonPersistentApiContext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NonPersistentApiContext.swift; sourceTree = "<group>"; };
+		C6728FF72248EEA100260B90 /* AlamofireService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlamofireService.swift; sourceTree = "<group>"; };
+		C6728FFA2248EF2C00260B90 /* AlamofireIngredientService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlamofireIngredientService.swift; sourceTree = "<group>"; };
 		C68578DF224508FC004217D5 /* StudentCoocking.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StudentCoocking.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C68578E2224508FC004217D5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C68578E4224508FC004217D5 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -71,8 +87,8 @@
 		C6CA661322450C0900AA37B6 /* ScannerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScannerViewController.swift; sourceTree = "<group>"; };
 		C6CA661522450F9100AA37B6 /* RecipesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipesViewController.swift; sourceTree = "<group>"; };
 		C6CA66172245106A00AA37B6 /* RecipesDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipesDetailViewController.swift; sourceTree = "<group>"; };
-		C6CA661A2245161000AA37B6 /* RecipesModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipesModel.swift; sourceTree = "<group>"; };
-		C6CA661C2245162900AA37B6 /* IngredientsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngredientsModel.swift; sourceTree = "<group>"; };
+		C6CA661A2245161000AA37B6 /* Recipe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recipe.swift; sourceTree = "<group>"; };
+		C6CA661C2245162900AA37B6 /* Ingredient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ingredient.swift; sourceTree = "<group>"; };
 		C6CA661E224517F700AA37B6 /* TheMealDBService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TheMealDBService.swift; sourceTree = "<group>"; };
 		C6CA662022451C6400AA37B6 /* IngredientsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngredientsTableViewController.swift; sourceTree = "<group>"; };
 		E14CB1EB2899FB56E70BD718 /* Pods_StudentCoockingUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_StudentCoockingUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -125,6 +141,44 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
+		C6728FEA2248EA7900260B90 /* Api */ = {
+			isa = PBXGroup;
+			children = (
+				C6728FF92248EF0900260B90 /* Ingredients */,
+				C6728FF62248EE9100260B90 /* Alamofire */,
+				C6728FF12248EE3500260B90 /* Context */,
+				C6728FED2248EBFF00260B90 /* ApiEnvironment.swift */,
+				C6728FEF2248EC5200260B90 /* ApiRoute.swift */,
+			);
+			path = Api;
+			sourceTree = "<group>";
+		};
+		C6728FF12248EE3500260B90 /* Context */ = {
+			isa = PBXGroup;
+			children = (
+				C6728FF22248EE4700260B90 /* ApiContext.swift */,
+				C6728FF42248EE6200260B90 /* NonPersistentApiContext.swift */,
+			);
+			path = Context;
+			sourceTree = "<group>";
+		};
+		C6728FF62248EE9100260B90 /* Alamofire */ = {
+			isa = PBXGroup;
+			children = (
+				C6728FF72248EEA100260B90 /* AlamofireService.swift */,
+			);
+			path = Alamofire;
+			sourceTree = "<group>";
+		};
+		C6728FF92248EF0900260B90 /* Ingredients */ = {
+			isa = PBXGroup;
+			children = (
+				C6728FEB2248EA9D00260B90 /* ApiIngredient.swift */,
+				C6728FFA2248EF2C00260B90 /* AlamofireIngredientService.swift */,
+			);
+			path = Ingredients;
+			sourceTree = "<group>";
+		};
 		C68578D6224508FC004217D5 = {
 			isa = PBXGroup;
 			children = (
@@ -150,6 +204,7 @@
 		C68578E1224508FC004217D5 /* StudentCoocking */ = {
 			isa = PBXGroup;
 			children = (
+				C6728FEA2248EA7900260B90 /* Api */,
 				C6728FE52248E40800260B90 /* Extensions */,
 				C6CA6619224515DD00AA37B6 /* Services */,
 				C6CA661222450B7100AA37B6 /* Views */,
@@ -198,8 +253,8 @@
 		C6CA661122450B6500AA37B6 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				C6CA661A2245161000AA37B6 /* RecipesModel.swift */,
-				C6CA661C2245162900AA37B6 /* IngredientsModel.swift */,
+				C6CA661A2245161000AA37B6 /* Recipe.swift */,
+				C6CA661C2245162900AA37B6 /* Ingredient.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -215,6 +270,7 @@
 			isa = PBXGroup;
 			children = (
 				C6CA661E224517F700AA37B6 /* TheMealDBService.swift */,
+				C6728FE82248E97300260B90 /* IngredientService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -439,6 +495,8 @@
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-StudentCoocking/Pods-StudentCoocking-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/AlamofireObjectMapper/AlamofireObjectMapper.framework",
+				"${BUILT_PRODUCTS_DIR}/ObjectMapper/ObjectMapper.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
@@ -446,6 +504,8 @@
 			);
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlamofireObjectMapper.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ObjectMapper.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -460,15 +520,23 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C6728FEC2248EA9D00260B90 /* ApiIngredient.swift in Sources */,
 				C68578E7224508FC004217D5 /* SettingsViewController.swift in Sources */,
-				C6CA661B2245161000AA37B6 /* RecipesModel.swift in Sources */,
+				C6CA661B2245161000AA37B6 /* Recipe.swift in Sources */,
 				C6CA661F224517F700AA37B6 /* TheMealDBService.swift in Sources */,
+				C6728FF02248EC5200260B90 /* ApiRoute.swift in Sources */,
 				C6728FE72248E42100260B90 /* Array+Extensions.swift in Sources */,
+				C6728FE92248E97300260B90 /* IngredientService.swift in Sources */,
 				C68578E3224508FC004217D5 /* AppDelegate.swift in Sources */,
+				C6728FFB2248EF2C00260B90 /* AlamofireIngredientService.swift in Sources */,
 				C68578E5224508FC004217D5 /* HomeViewController.swift in Sources */,
 				C6CA66182245106A00AA37B6 /* RecipesDetailViewController.swift in Sources */,
+				C6728FF82248EEA100260B90 /* AlamofireService.swift in Sources */,
+				C6728FF52248EE6200260B90 /* NonPersistentApiContext.swift in Sources */,
+				C6728FF32248EE4700260B90 /* ApiContext.swift in Sources */,
 				C6CA661622450F9100AA37B6 /* RecipesViewController.swift in Sources */,
-				C6CA661D2245162900AA37B6 /* IngredientsModel.swift in Sources */,
+				C6728FEE2248EBFF00260B90 /* ApiEnvironment.swift in Sources */,
+				C6CA661D2245162900AA37B6 /* Ingredient.swift in Sources */,
 				C6CA662122451C6400AA37B6 /* IngredientsTableViewController.swift in Sources */,
 				C6CA661422450C0900AA37B6 /* ScannerViewController.swift in Sources */,
 			);

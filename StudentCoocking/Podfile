@@ -3,6 +3,7 @@ platform :ios, '10.3'
  
  target 'StudentCoocking' do		
    pod 'Alamofire', '~> 4.7'
+   pod 'AlamofireObjectMapper'
    pod 'SwiftyJSON', '~> 4.0'
  end
 
