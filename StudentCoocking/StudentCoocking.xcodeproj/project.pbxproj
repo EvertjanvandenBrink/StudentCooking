@@ -10,6 +10,7 @@
 		36DFF8A3A61B026C02A41287 /* Pods_StudentCoockingUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E14CB1EB2899FB56E70BD718 /* Pods_StudentCoockingUITests.framework */; };
 		96731059105A32A358416BB9 /* Pods_StudentCoocking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A628B350A9990447C3B00057 /* Pods_StudentCoocking.framework */; };
 		B5A88F5BDED43F8F5613CE94 /* Pods_StudentCoockingTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 513AF1AA507C1F1A5AEFF8CF /* Pods_StudentCoockingTests.framework */; };
+		C6728FE72248E42100260B90 /* Array+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6728FE62248E42100260B90 /* Array+Extensions.swift */; };
 		C68578E3224508FC004217D5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C68578E2224508FC004217D5 /* AppDelegate.swift */; };
 		C68578E5224508FC004217D5 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C68578E4224508FC004217D5 /* HomeViewController.swift */; };
 		C68578E7224508FC004217D5 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C68578E6224508FC004217D5 /* SettingsViewController.swift */; };
@@ -52,6 +53,7 @@
 		92832D548AFF775A98FC3D8A /* Pods-StudentCoocking.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StudentCoocking.release.xcconfig"; path = "Target Support Files/Pods-StudentCoocking/Pods-StudentCoocking.release.xcconfig"; sourceTree = "<group>"; };
 		A628B350A9990447C3B00057 /* Pods_StudentCoocking.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_StudentCoocking.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B0A45C69281BDC47EB5FEFE2 /* Pods-StudentCoockingTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StudentCoockingTests.release.xcconfig"; path = "Target Support Files/Pods-StudentCoockingTests/Pods-StudentCoockingTests.release.xcconfig"; sourceTree = "<group>"; };
+		C6728FE62248E42100260B90 /* Array+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Extensions.swift"; sourceTree = "<group>"; };
 		C68578DF224508FC004217D5 /* StudentCoocking.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StudentCoocking.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C68578E2224508FC004217D5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C68578E4224508FC004217D5 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -115,6 +117,14 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		C6728FE52248E40800260B90 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				C6728FE62248E42100260B90 /* Array+Extensions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		C68578D6224508FC004217D5 = {
 			isa = PBXGroup;
 			children = (
@@ -140,6 +150,7 @@
 		C68578E1224508FC004217D5 /* StudentCoocking */ = {
 			isa = PBXGroup;
 			children = (
+				C6728FE52248E40800260B90 /* Extensions */,
 				C6CA6619224515DD00AA37B6 /* Services */,
 				C6CA661222450B7100AA37B6 /* Views */,
 				C6CA661122450B6500AA37B6 /* Models */,
@@ -452,6 +463,7 @@
 				C68578E7224508FC004217D5 /* SettingsViewController.swift in Sources */,
 				C6CA661B2245161000AA37B6 /* RecipesModel.swift in Sources */,
 				C6CA661F224517F700AA37B6 /* TheMealDBService.swift in Sources */,
+				C6728FE72248E42100260B90 /* Array+Extensions.swift in Sources */,
 				C68578E3224508FC004217D5 /* AppDelegate.swift in Sources */,
 				C68578E5224508FC004217D5 /* HomeViewController.swift in Sources */,
 				C6CA66182245106A00AA37B6 /* RecipesDetailViewController.swift in Sources */,
