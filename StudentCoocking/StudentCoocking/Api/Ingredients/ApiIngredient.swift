@@ -8,6 +8,19 @@
 
 import ObjectMapper
 
+class ApiIngredients {
+    
+    required public init?(map: Map) {}
+    
+    var ingredients = ""
+
+    func convert() -> Ingredients {
+        return Ingredients(
+            ingredients: ingredients
+        )
+    }
+}
+
 class ApiIngredient {
     
     required public init?(map: Map) {}
@@ -36,5 +49,12 @@ extension ApiIngredient: Mappable {
         name <- map["strIngredient"]
         description <- map["strDescription"]
         type <- map["strType"]
+    }
+}
+
+extension ApiIngredients: Mappable {
+    
+    func mapping(map: Map) {
+        ingredients <- map["meals"]
     }
 }

@@ -12,6 +12,7 @@ enum ApiEnvironment: String { case
     
     production = "https://www.themealdb.com/api/json/v1/1" //api key = 1
     
+    
     var url: String {
         return rawValue
     }

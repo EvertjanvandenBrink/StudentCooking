@@ -26,9 +26,12 @@ class AlamofireIngredientService: AlamofireService, IngredientService {
     }
     
     func getAllIngredients(completion: @escaping IngredientsResult) {
-        get(at: .allIngredients()).responseArray { (response: DataResponse<[ApiIngredient]>) in
-            let result = response.result.value?.map { $0.convert() }
-            completion(result ?? [], response.result.error)
+        get(at: .allIngredients()) .responseArray { (response: DataResponse<[ApiIngredients]>) in
+            print(response.result.value)
+//            let result = response.result.value?.map { $0.convert() }
+            print(response)
+//            print(response.result.value)
+//            completion(result ?? [], response.result.error)
         }
     }
 }
