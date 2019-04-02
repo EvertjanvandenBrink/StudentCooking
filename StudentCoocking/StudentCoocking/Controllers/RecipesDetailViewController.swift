@@ -9,11 +9,20 @@
 import UIKit
 
 class RecipesDetailViewController: UIViewController {
+    var recipe:Recipe!
+    
+    @IBOutlet var nameLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        TheMealDBService().fetchRandomRecipe(completionHandler: completionFetchRandomRecipe)
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        nameLabel?.text = self.recipe.strMeal
+    }
     
+    func completionFetchRandomRecipe(meals: Meals?, error: Error?) {
+        self.recipe = meals?.meals[0]
+    }
 }

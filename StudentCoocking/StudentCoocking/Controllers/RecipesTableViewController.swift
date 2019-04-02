@@ -43,9 +43,12 @@ class RecipesTableViewController: UITableViewController {
     }
 
     override func motionBegan(_ motion: UIEvent.EventSubtype, with event: UIEvent?) {
-        let meal = self.meals?.meals.randomElement();
-        print("You should get: \(meal)")
+        let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        let recipesDetailViewController = storyBoard.instantiateViewController(withIdentifier: "recipesDetailViewController")
+        self.dismiss(animated: true, completion: nil)
+        self.present(recipesDetailViewController, animated: true, completion: nil)
     }
+    
     /*
     // Override to support conditional editing of the table view.
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
