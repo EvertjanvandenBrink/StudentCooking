@@ -42,6 +42,10 @@ class RecipesTableViewController: UITableViewController {
         return cell
     }
 
+    override func motionBegan(_ motion: UIEvent.EventSubtype, with event: UIEvent?) {
+        let meal = self.meals?.meals.randomElement();
+        print("You should get: \(meal)")
+    }
     /*
     // Override to support conditional editing of the table view.
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
