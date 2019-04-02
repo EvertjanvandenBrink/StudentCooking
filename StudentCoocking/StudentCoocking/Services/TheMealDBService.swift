@@ -32,12 +32,21 @@ class TheMealDBService {
         }
     }
 
-    func fetchAllIngredients() {
-        Alamofire.request(getData(url: "list.php?i=list")).responseJSON { (resData) -> Void in
-            print(resData.result.value!)
+    func fetchAllIngredients(completionHandler: @escaping (Ingredients?, Error?) -> ()) {
+        Alamofire.request(getData(url: "list.php?i=list")).responseJSON { (response) -> Void in
+            switch response.result {
+            case .success(_):
+                guard let ingredient = try? JSONDecoder().decode(Ingredients.self, from: response.data!) else {
+                    print("Error: Couldn't decode data into Blog")
+                    return
+                }
+                completionHandler(ingredient, nil)
+            case .failure(let error):
+                completionHandler(nil, error)
+            }
         }
     }
-
+    
     func fetchRandomMeal() {
         Alamofire.request(getData(url: "random.php")).responseJSON { (resData) -> Void in
             print(resData.result.value!)

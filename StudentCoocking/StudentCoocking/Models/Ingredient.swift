@@ -9,3 +9,13 @@
 //struct Ingredients {
 //    let ingredients: [Ingredient]
 //}
+import Foundation
+
+struct Ingredients: Codable {
+    let meals: [Meal]
+}
+
+struct Meal: Codable {
+    let strIngredient, idIngredient: String
+    let strDescription, strType: String?
+}
