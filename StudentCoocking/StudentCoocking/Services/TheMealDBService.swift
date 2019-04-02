@@ -16,15 +16,18 @@ class TheMealDBService {
 
     init() {}
 
-    func fetchLatestMeals() {
+    func fetchLatestMeals(completionHandler: @escaping (Meals?, Error?) -> ()) {
         // /lookup.php?i=52772
         Alamofire.request(getData(url: "latest.php")).responseJSON { (response) -> Void in
-            if((response.result.value) != nil) {
-                guard let meal = try? JSONDecoder().decode(Meals.self, from: response.data!) else {
-                    print("Error: Couldn't decode data into Blog")
-                    return
-                }
-                print(meal)
+            switch response.result {
+            case .success(_):
+                    guard let meal = try? JSONDecoder().decode(Meals.self, from: response.data!) else {
+                        print("Error: Couldn't decode data into Blog")
+                        return
+                    }
+                    completionHandler(meal, nil)
+                case .failure(let error):
+                    completionHandler(nil, error)
             }
         }
     }

@@ -10,15 +10,16 @@ import UIKit
 
 class RecipesTableViewController: UITableViewController {
 
+    var meals: Meals?
+    
+    func completionFetchLatestMeals(meals: Meals?, error: Error?) {
+        self.meals = meals
+        self.tableView.reloadData()
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        TheMealDBService().fetchLatestMeals()
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
+        TheMealDBService().fetchLatestMeals(completionHandler: completionFetchLatestMeals)
     }
 
     // MARK: - Table view data source
@@ -30,18 +31,16 @@ class RecipesTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        return self.meals?.meals.count ?? 0
     }
 
-    /*
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "recipeIdentifier", for: indexPath)
 
-        // Configure the cell...
-
+        cell.textLabel?.text = self.meals?.meals[indexPath.row].strMeal
+        
         return cell
     }
-    */
 
     /*
     // Override to support conditional editing of the table view.
