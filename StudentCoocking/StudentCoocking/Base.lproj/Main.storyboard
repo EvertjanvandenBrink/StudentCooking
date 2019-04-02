@@ -10,22 +10,6 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--RecipesViewController-->
-        <scene sceneID="lct-9X-fPr">
-            <objects>
-                <viewController title="RecipesViewController" id="Mht-Ma-2ER" customClass="RecipesViewController" customModule="StudentCoocking" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="Thk-tD-bXU">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <viewLayoutGuide key="safeArea" id="gZw-Yl-aPN"/>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="Recipes" id="RjB-pK-sP1"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="HgX-0u-Wgk" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1020" y="-554"/>
-        </scene>
         <!--IngredientsTableViewController-->
         <scene sceneID="JIv-hK-wsb">
             <objects>
@@ -53,7 +37,37 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4pQ-gu-cR9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1028" y="119"/>
+            <point key="canvasLocation" x="1028" y="220"/>
+        </scene>
+        <!--Recipes-->
+        <scene sceneID="LBo-7y-Oua">
+            <objects>
+                <tableViewController id="lmV-pD-LR5" customClass="RecipesTableViewController" customModule="StudentCoocking" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="6pT-vD-3Dj">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="Xhm-mS-8TI">
+                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Xhm-mS-8TI" id="NyQ-dt-2tr">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="lmV-pD-LR5" id="uev-yd-BaT"/>
+                            <outlet property="delegate" destination="lmV-pD-LR5" id="6RQ-7q-vRY"/>
+                        </connections>
+                    </tableView>
+                    <tabBarItem key="tabBarItem" title="Recipes" id="uh1-RN-cMb"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="UJF-1n-qDf" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1028" y="-554"/>
         </scene>
         <!--SettingsViewController-->
         <scene sceneID="YGr-cu-E8y">
@@ -69,7 +83,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3oV-8a-iM8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1028" y="789"/>
+            <point key="canvasLocation" x="62" y="494"/>
         </scene>
         <!--HomeViewController-->
         <scene sceneID="8eN-uL-n9G">
@@ -130,7 +144,7 @@
                     </tabBar>
                     <connections>
                         <segue destination="ZdF-FC-ROe" kind="relationship" relationship="viewControllers" id="T1G-Yr-rjr"/>
-                        <segue destination="Mht-Ma-2ER" kind="relationship" relationship="viewControllers" id="E6q-zD-g6K"/>
+                        <segue destination="lmV-pD-LR5" kind="relationship" relationship="viewControllers" id="1WL-Oe-eA2"/>
                         <segue destination="1cq-Rb-esq" kind="relationship" relationship="viewControllers" id="nd9-e9-iS2"/>
                         <segue destination="gad-Ol-cmD" kind="relationship" relationship="viewControllers" id="Fss-re-pug"/>
                     </connections>
