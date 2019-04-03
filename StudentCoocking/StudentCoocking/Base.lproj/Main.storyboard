@@ -81,6 +81,7 @@
                     </view>
                     <connections>
                         <outlet property="descriptionLabel" destination="Pub-Vc-Fzh" id="PtC-I9-9LS"/>
+                        <outlet property="imageView" destination="4tX-MF-3VC" id="vhy-5w-5ES"/>
                         <outlet property="nameLabel" destination="d5O-da-55b" id="jiE-93-Qrg"/>
                         <outlet property="typeLabel" destination="Cac-iS-T6M" id="Gjn-e4-igi"/>
                     </connections>

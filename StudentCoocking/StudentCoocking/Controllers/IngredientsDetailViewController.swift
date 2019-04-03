@@ -14,6 +14,7 @@ class IngredientsDetailViewController: UIViewController {
     @IBOutlet var nameLabel: UILabel!
     @IBOutlet var descriptionLabel: UILabel!
     @IBOutlet var typeLabel: UILabel!
+    @IBOutlet weak var imageView: UIImageView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,5 +28,13 @@ class IngredientsDetailViewController: UIViewController {
         nameLabel?.text = ingredient.strIngredient
         descriptionLabel?.text = ingredient.strDescription
         typeLabel?.text = ingredient.strType
+        
+        let ingredientName = ingredient.strIngredient.replacingOccurrences(of: " ", with: "-")
+        TheMealDBService().fetchImageByIngredient(ingredientName: ingredientName) { (image, error) in
+            guard let image = image else { return }
+            DispatchQueue.main.async {
+                self.imageView.image = image
+            }
+        }
     }
 }

@@ -47,6 +47,20 @@ class TheMealDBService {
         }
     }
     
+    func fetchImageByIngredient(ingredientName: String, completionHandler: @escaping (UIImage?, Error?) -> Void) {
+        Alamofire.request(getData(url: "images/ingredients/\(ingredientName).png")).responseJSON { (response) -> Void in
+            switch response.result {
+            case .success(_):
+                print(response.data!)
+                let downloadedImage = UIImage(data: response.data!)
+                completionHandler(downloadedImage, nil)
+            case .failure(let error):
+                print(error)
+                completionHandler(nil, error)
+            }
+        }
+    }
+    
     func getData(url: String) -> String {
         return "\(API_URL)/\(API_KEY)/\(url)";
     }
