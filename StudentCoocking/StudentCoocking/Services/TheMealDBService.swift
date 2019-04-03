@@ -16,46 +16,31 @@ class TheMealDBService {
 
     init() {}
 
-    func fetchLatestMeals(completionHandler: @escaping (Meals?, Error?) -> ()) {
+    func fetchLatestMeals(completionHandler: @escaping ([Recipe]?, Error?) -> ()) {
         // /lookup.php?i=52772
         Alamofire.request(getData(url: "latest.php")).responseJSON { (response) -> Void in
             switch response.result {
             case .success(_):
-                    guard let meal = try? JSONDecoder().decode(Meals.self, from: response.data!) else {
+                    guard let meals = try? JSONDecoder().decode(Meals.self, from: response.data!) else {
                         print("Error: Couldn't decode data into Blog")
                         return
                     }
-                    completionHandler(meal, nil)
+                    completionHandler(meals.meals, nil)
                 case .failure(let error):
                     completionHandler(nil, error)
             }
         }
     }
 
-    func fetchAllIngredients(completionHandler: @escaping (Ingredients?, Error?) -> ()) {
+    func fetchAllIngredients(completionHandler: @escaping ([Meal]?, Error?) -> Void) {
         Alamofire.request(getData(url: "list.php?i=list")).responseJSON { (response) -> Void in
             switch response.result {
             case .success(_):
-                guard let ingredient = try? JSONDecoder().decode(Ingredients.self, from: response.data!) else {
+                guard let ingredients = try? JSONDecoder().decode(Ingredients.self, from: response.data!) else {
                     print("Error: Couldn't decode data into Blog")
                     return
                 }
-                completionHandler(ingredient, nil)
-            case .failure(let error):
-                completionHandler(nil, error)
-            }
-        }
-    }
-    
-    func fetchRandomRecipe(completionHandler: @escaping (Meals?, Error?) -> ()) {
-        Alamofire.request(getData(url: "random.php")).responseJSON { (response) -> Void in
-            switch response.result {
-            case .success(_):
-                guard let recipe = try? JSONDecoder().decode(Meals.self, from: response.data!) else {
-                    print("Error: Couldn't decode data into Blog")
-                    return
-                }
-                completionHandler(recipe, nil)
+                completionHandler(ingredients.meals, nil)
             case .failure(let error):
                 completionHandler(nil, error)
             }

@@ -14,24 +14,20 @@ class RecipesDetailViewController: UIViewController {
     @IBOutlet var nameLabel: UILabel!
     @IBOutlet var categoryLabel: UILabel!
     @IBOutlet var tagsLabel: UILabel!
+    @IBOutlet var instructionsLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        TheMealDBService().fetchRandomRecipe(completionHandler: completionFetchRandomRecipe)
     }
     
     override func viewDidAppear(_ animated: Bool) {
         updateUI()
     }
     
-    func completionFetchRandomRecipe(meals: Meals?, error: Error?) {
-        self.recipe = meals?.meals[0]
-    }
-    
     func updateUI() {
         nameLabel?.text = recipe.strMeal
         categoryLabel?.text = recipe.strCategory
         tagsLabel?.text = recipe.strTags
-        // Add more label initialisations here...
+        instructionsLabel?.text = recipe.strInstructions
     }
 }

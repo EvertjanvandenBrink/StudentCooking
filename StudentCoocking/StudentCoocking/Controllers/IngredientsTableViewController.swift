@@ -10,11 +10,19 @@ import UIKit
 
 class IngredientsTableViewController: UITableViewController {
     
-    var ingredients: Ingredients?
+    var ingredients = [Meal]()
     
-    func completionFetchAllIngredients(ingredients: Ingredients?, error: Error?) {
-        self.ingredients = ingredients
-        self.tableView.reloadData()
+    func completionFetchAllIngredients(ingredients:  [Meal]?, error: Error?) {
+        if let ingredients = ingredients {
+            self.updateUI(with: ingredients)
+        }
+    }
+    
+    func updateUI(with ingredients: [Meal]) {
+        DispatchQueue.main.async {
+            self.ingredients = ingredients
+            self.tableView.reloadData()
+        }
     }
     
     override func viewDidLoad() {
@@ -31,15 +39,23 @@ class IngredientsTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return self.ingredients?.meals.count ?? 0
+        return ingredients.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ingredientIdentifier", for: indexPath)
         
-        cell.textLabel?.text = self.ingredients?.meals[indexPath.row].strIngredient
+        cell.textLabel?.text = self.ingredients[indexPath.row].strIngredient
         
         return cell
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "IngredientsDetailSegue" {
+            let ingredientsDetailViewController = segue.destination as! IngredientsDetailViewController
+            let index = tableView.indexPathForSelectedRow!.row
+            ingredientsDetailViewController.ingredient = ingredients[index]
+        }
     }
     
     /*

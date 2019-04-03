@@ -10,16 +10,24 @@ import UIKit
 
 class RecipesTableViewController: UITableViewController {
 
-    var meals: Meals?
+    var recipes = [Recipe]()
     
-    func completionFetchLatestMeals(meals: Meals?, error: Error?) {
-        self.meals = meals
-        self.tableView.reloadData()
+    func completionFetchLatestRecipes(recipes: [Recipe]?, error: Error?) {
+        if let recipes = recipes {
+            self.updateUI(with: recipes)
+        }
+    }
+    
+    func updateUI(with recipes: [Recipe]) {
+        DispatchQueue.main.async {
+            self.recipes = recipes
+            self.tableView.reloadData()
+        }
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        TheMealDBService().fetchLatestMeals(completionHandler: completionFetchLatestMeals)
+        TheMealDBService().fetchLatestMeals(completionHandler: completionFetchLatestRecipes)
     }
 
     // MARK: - Table view data source
@@ -31,22 +39,32 @@ class RecipesTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return self.meals?.meals.count ?? 0
+        return recipes.count
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "recipeIdentifier", for: indexPath)
 
-        cell.textLabel?.text = self.meals?.meals[indexPath.row].strMeal
+        cell.textLabel?.text = recipes[indexPath.row].strMeal
         
         return cell
     }
 
     override func motionBegan(_ motion: UIEvent.EventSubtype, with event: UIEvent?) {
         let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-        let recipesDetailViewController = storyBoard.instantiateViewController(withIdentifier: "recipesDetailViewController")
+        let recipesDetailViewController = storyBoard.instantiateViewController(withIdentifier: "recipesDetailViewController") as! RecipesDetailViewController
+        recipesDetailViewController.recipe = recipes.randomElement()
+        
         self.dismiss(animated: true, completion: nil)
         self.present(recipesDetailViewController, animated: true, completion: nil)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "RecipesDetailSegue" {
+            let recipesDetailViewController = segue.destination as! RecipesDetailViewController
+            let index = tableView.indexPathForSelectedRow!.row
+            recipesDetailViewController.recipe = recipes[index]
+        }
     }
     
     /*
