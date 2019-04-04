@@ -30,10 +30,14 @@ class IngredientsDetailViewController: UIViewController {
         typeLabel?.text = ingredient.strType
         
         let ingredientName = ingredient.strIngredient.replacingOccurrences(of: " ", with: "-")
-        TheMealDBService().fetchImageByIngredient(ingredientName: ingredientName) { (image, error) in
-            guard let image = image else { return }
-            DispatchQueue.main.async {
-                self.imageView.image = image
+        let finalUrl = "\(ingredientName).png"
+        
+        if let url = URL(string: finalUrl) {
+            TheMealDBService.shared.fetchImage(url: url) { (image) in
+                guard let image = image else { return }
+                DispatchQueue.main.async {
+                    self.imageView?.image = image
+                }
             }
         }
     }

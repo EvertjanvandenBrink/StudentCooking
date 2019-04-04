@@ -13,7 +13,8 @@ import SwiftyJSON
 class TheMealDBService {
     var API_KEY: String = "1"
     var API_URL: String = "https://www.themealdb.com/api/json/v1"
-
+    let baseURL = URL(string: "https://www.themealdb.com/")!
+    
     static let shared = TheMealDBService()
     
     init() {}
@@ -50,9 +51,12 @@ class TheMealDBService {
     }
     
     func fetchImage(url: URL, completion: @escaping (UIImage?) -> Void) {
-        let finalURL = url
+        var finalURL = url
         if (!url.absoluteString.contains("https")) {
-            return
+            finalURL = TheMealDBService.shared.baseURL
+            finalURL = finalURL.appendingPathComponent("images")
+            finalURL = finalURL.appendingPathComponent("ingredients")
+            finalURL = finalURL.appendingPathComponent(url.absoluteString)
         }
         
         let task = URLSession.shared.dataTask(with: finalURL) { (data, response, error) in
@@ -64,26 +68,6 @@ class TheMealDBService {
             }
         }
         task.resume()
-    }
-    
-    
-    
-    
-    
-    
-    
-    func fetchImageByIngredient(ingredientName: String, completionHandler: @escaping (UIImage?, Error?) -> Void) {
-        Alamofire.request(getData(url: "images/ingredients/\(ingredientName).png")).responseJSON { (response) -> Void in
-            switch response.result {
-            case .success(_):
-                print(response.data!)
-                let downloadedImage = UIImage(data: response.data!)
-                completionHandler(downloadedImage, nil)
-            case .failure(let error):
-                print(error)
-                completionHandler(nil, error)
-            }
-        }
     }
     
     func getData(url: String) -> String {
