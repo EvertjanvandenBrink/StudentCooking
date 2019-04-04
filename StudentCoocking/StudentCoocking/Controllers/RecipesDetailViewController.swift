@@ -31,7 +31,13 @@ class RecipesDetailViewController: UIViewController {
         tagsLabel?.text = recipe.strTags
         instructionsLabel?.text = recipe.strInstructions
         
-        print(recipe.strMealThumb)
-        thumbmail.image = UIImage(named: recipe.strMealThumb!)
+        if let url = URL(string: recipe.strMealThumb!) {
+            TheMealDBService.shared.fetchImage(url: url) { (image) in
+                guard let image = image else { return }
+                DispatchQueue.main.async {
+                    self.thumbmail.image = image
+                }
+            }
+        }
     }
 }

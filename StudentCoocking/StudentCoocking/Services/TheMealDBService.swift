@@ -14,6 +14,8 @@ class TheMealDBService {
     var API_KEY: String = "1"
     var API_URL: String = "https://www.themealdb.com/api/json/v1"
 
+    static let shared = TheMealDBService()
+    
     init() {}
 
     func fetchLatestMeals(completionHandler: @escaping ([Recipe]?, Error?) -> ()) {
@@ -46,6 +48,29 @@ class TheMealDBService {
             }
         }
     }
+    
+    func fetchImage(url: URL, completion: @escaping (UIImage?) -> Void) {
+        let finalURL = url
+        if (!url.absoluteString.contains("https")) {
+            return
+        }
+        
+        let task = URLSession.shared.dataTask(with: finalURL) { (data, response, error) in
+            if let data = data,
+                let image = UIImage(data: data) {
+                completion(image)
+            } else {
+                completion(nil)
+            }
+        }
+        task.resume()
+    }
+    
+    
+    
+    
+    
+    
     
     func fetchImageByIngredient(ingredientName: String, completionHandler: @escaping (UIImage?, Error?) -> Void) {
         Alamofire.request(getData(url: "images/ingredients/\(ingredientName).png")).responseJSON { (response) -> Void in
