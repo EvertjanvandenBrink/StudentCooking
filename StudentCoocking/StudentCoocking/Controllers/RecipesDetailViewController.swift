@@ -15,6 +15,7 @@ class RecipesDetailViewController: UIViewController {
     @IBOutlet var categoryLabel: UILabel!
     @IBOutlet var tagsLabel: UILabel!
     @IBOutlet var instructionsLabel: UILabel!
+    @IBOutlet var thumbmail: UIImageView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,5 +30,8 @@ class RecipesDetailViewController: UIViewController {
         categoryLabel?.text = recipe.strCategory
         tagsLabel?.text = recipe.strTags
         instructionsLabel?.text = recipe.strInstructions
+        
+        print(recipe.strMealThumb)
+        thumbmail.image = UIImage(named: recipe.strMealThumb!)
     }
 }
