@@ -82,4 +82,17 @@ class RecipesTableViewController: UITableViewController {
             recipesDetailViewController.recipe = recipes[index]
         }
     }
+    
+    override func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
+        let favorite = UITableViewRowAction(style: .normal, title: "Favorite") { (action, indexPath) in
+            let recipe = self.recipes[indexPath.row]
+            self.addToFavourites(recipe: recipe)
+        }
+        favorite.backgroundColor = UIColor.green
+        return [favorite]
+    }
+    
+    func addToFavourites(recipe: Recipe) {
+        FavouriteRecipesViewController.shared.addToFavourite(recipe)
+    }
 }
