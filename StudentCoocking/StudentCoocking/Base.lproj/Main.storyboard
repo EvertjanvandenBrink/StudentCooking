@@ -98,7 +98,7 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="c0z-FO-ReJ" kind="show" id="Q63-5d-8ug"/>
+                                    <segue destination="c0z-FO-ReJ" kind="show" identifier="RecipesDetailSegue" id="Q63-5d-8ug"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
