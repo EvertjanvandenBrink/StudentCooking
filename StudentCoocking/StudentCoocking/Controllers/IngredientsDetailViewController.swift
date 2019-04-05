@@ -12,7 +12,7 @@ class IngredientsDetailViewController: UIViewController {
     var ingredient:Meal!
     
     @IBOutlet var nameLabel: UILabel!
-    @IBOutlet var descriptionLabel: UILabel!
+    @IBOutlet var descriptionView: UITextView!
     @IBOutlet var typeLabel: UILabel!
     @IBOutlet weak var imageView: UIImageView!
     
@@ -26,7 +26,7 @@ class IngredientsDetailViewController: UIViewController {
     
     func updateUI() {
         nameLabel?.text = ingredient.strIngredient
-        descriptionLabel?.text = ingredient.strDescription
+        descriptionView?.text = ingredient.strDescription
         typeLabel?.text = ingredient.strType
         
         let ingredientName = ingredient.strIngredient.replacingOccurrences(of: " ", with: "-")

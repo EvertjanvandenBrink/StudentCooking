@@ -1,20 +1,18 @@
 //
-//  RecipesDetailViewController.swift
+//  CategoriesDetailViewController.swift
 //  StudentCoocking
 //
-//  Created by Evertjan van den Brink on 22/03/2019.
+//  Created by Evertjan van den Brink on 05/04/2019.
 //  Copyright © 2019 Evertjan van den Brink. All rights reserved.
 //
 
 import UIKit
 
-class RecipesDetailViewController: UIViewController {
-    var recipe:Recipe!
+class CategoriesDetailViewController: UIViewController {
+    var category:Category!
     
     @IBOutlet var nameLabel: UILabel!
-    @IBOutlet var categoryLabel: UILabel!
-    @IBOutlet var tagsLabel: UILabel!
-    @IBOutlet var instructionsView: UITextView!
+    @IBOutlet var descriptionView: UITextView!
     @IBOutlet var thumbmail: UIImageView!
     
     override func viewDidLoad() {
@@ -26,16 +24,14 @@ class RecipesDetailViewController: UIViewController {
     }
     
     func updateUI() {
-        nameLabel?.text = recipe.strMeal
-        categoryLabel?.text = recipe.strCategory
-        tagsLabel?.text = recipe.strTags
-        instructionsView?.text = recipe.strInstructions
+        nameLabel?.text = category.strCategory
+        descriptionView?.text = category.strCategoryDescription
         
-        if let url = URL(string: recipe.strMealThumb!) {
+        if let url = URL(string: category.strCategoryThumb) {
             TheMealDBService.shared.fetchImage(url: url) { (image) in
                 guard let image = image else { return }
                 DispatchQueue.main.async {
-                    self.thumbmail.image = image
+                    self.thumbmail?.image = image
                 }
             }
         }
