@@ -20,12 +20,11 @@ class TheMealDBService {
     init() {}
 
     func fetchLatestMeals(completionHandler: @escaping ([Recipe]?, Error?) -> ()) {
-        // /lookup.php?i=52772
         Alamofire.request(getData(url: "latest.php")).responseJSON { (response) -> Void in
             switch response.result {
             case .success(_):
                     guard let meals = try? JSONDecoder().decode(Meals.self, from: response.data!) else {
-                        print("Error: Couldn't decode data into Blog")
+                        print("Error: Couldn't decode data into Meal")
                         return
                     }
                     completionHandler(meals.meals, nil)
@@ -40,7 +39,7 @@ class TheMealDBService {
             switch response.result {
             case .success(_):
                 guard let ingredients = try? JSONDecoder().decode(Ingredients.self, from: response.data!) else {
-                    print("Error: Couldn't decode data into Blog")
+                    print("Error: Couldn't decode data into Meal")
                     return
                 }
                 completionHandler(ingredients.meals, nil)
@@ -75,7 +74,37 @@ class TheMealDBService {
             switch response.result {
             case .success(_):
                 guard let meals = try? JSONDecoder().decode(Meals.self, from: response.data!) else {
-                    print("Error: Couldn't decode data into Blog")
+                    print("Error: Couldn't decode data into Recipes")
+                    return
+                }
+                completionHandler(meals.meals, nil)
+            case .failure(let error):
+                completionHandler(nil, error)
+            }
+        }
+    }
+    
+    func fetchAllCategories(completionHandler: @escaping ([Category]?, Error?) -> ()) {
+        Alamofire.request(getData(url: "categories.php")).responseJSON { (response) -> Void in
+            switch response.result {
+            case .success(_):
+                guard let categories = try? JSONDecoder().decode(Categories.self, from: response.data!) else {
+                    print("Error: Couldn't decode data into Category")
+                    return
+                }
+                completionHandler(categories.categories, nil)
+            case .failure(let error):
+                completionHandler(nil, error)
+            }
+        }
+    }
+    
+    func fetchFilterRecipeByCategory(category: String, completionHandler: @escaping ([Recipe]?, Error?) -> ()) {
+        Alamofire.request(getData(url: "filter.php?c=\(category)")).responseJSON { (response) -> Void in
+            switch response.result {
+            case .success(_):
+                guard let meals = try? JSONDecoder().decode(Meals.self, from: response.data!) else {
+                    print("Error: Couldn't decode data into Recipes")
                     return
                 }
                 completionHandler(meals.meals, nil)
