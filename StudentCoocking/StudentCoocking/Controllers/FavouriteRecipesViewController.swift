@@ -8,27 +8,20 @@
 
 import UIKit
 
+var favouriteRecipes: [Recipe] = []
 class FavouriteRecipesViewController: UITableViewController {
     static let shared = FavouriteRecipesViewController()
     
-    var favouriteRecipes: [Recipe] = []
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-        print("in viewDidLoad!")
-        print(favouriteRecipes.count)
-        print(favouriteRecipes)
-        
         if favouriteRecipes.count > 0 {
             self.updateUI(with: favouriteRecipes)
         }
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        print("in viewDidAppear!")
-        print(favouriteRecipes.count)
-        print(favouriteRecipes)
-        
+        super.viewDidAppear(true)
+
         if favouriteRecipes.count > 0 {
             self.updateUI(with: favouriteRecipes)
         }
@@ -38,12 +31,9 @@ class FavouriteRecipesViewController: UITableViewController {
         if favouriteRecipesContainsRecipe(recipe) {
             print("Recipe is already a favourite!")
         } else {
-            self.favouriteRecipes.append(recipe)
-            print("\(recipe) is added to favourites!")
+            favouriteRecipes.append(recipe)
+            self.updateUI(with: favouriteRecipes)
         }
-        
-        print(self.favouriteRecipes.count)
-        print(recipe.strMeal!)
     }
     
     func deleteFromFavourites(recipe: Recipe) {
@@ -56,8 +46,9 @@ class FavouriteRecipesViewController: UITableViewController {
     
     func updateUI(with recipes: [Recipe]) {
         DispatchQueue.main.async {
-            self.favouriteRecipes = recipes
+            favouriteRecipes = recipes
             self.tableView.reloadData()
+            self.updateBadgeNumber()
         }
     }
     
@@ -103,6 +94,11 @@ class FavouriteRecipesViewController: UITableViewController {
             let index = tableView.indexPathForSelectedRow!.row
             recipesDetailViewController.recipe = favouriteRecipes[index]
         }
+    }
+    
+    private func updateBadgeNumber() {
+        let badgeValue = favouriteRecipes.count > 0 ? "\(favouriteRecipes.count)" : nil
+        navigationController?.tabBarItem.badgeValue = badgeValue
     }
     
     private func favouriteRecipesContainsRecipe(_ recipe: Recipe) -> Bool {

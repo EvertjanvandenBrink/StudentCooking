@@ -93,6 +93,6 @@ class RecipesTableViewController: UITableViewController {
     }
     
     func addToFavourites(recipe: Recipe) {
-        FavouriteRecipesViewController.shared.addToFavourite(recipe)
+        FavouriteRecipesViewController().addToFavourite(recipe)
     }
 }
