@@ -26,6 +26,7 @@
 		C6BFB9E4225779D9006EBE36 /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6BFB9E3225779D9006EBE36 /* Helper.swift */; };
 		C6BFB9E622577BFB006EBE36 /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6BFB9E522577BFB006EBE36 /* UIViewController.swift */; };
 		C6BFB9E82257867C006EBE36 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6BFB9E72257867C006EBE36 /* Category.swift */; };
+		C6BFB9EA22578938006EBE36 /* CategoriesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6BFB9E922578938006EBE36 /* CategoriesTableViewController.swift */; };
 		C6CA661422450C0900AA37B6 /* ScannerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6CA661322450C0900AA37B6 /* ScannerViewController.swift */; };
 		C6CA66182245106A00AA37B6 /* RecipesDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6CA66172245106A00AA37B6 /* RecipesDetailViewController.swift */; };
 		C6CA661B2245161000AA37B6 /* Recipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6CA661A2245161000AA37B6 /* Recipe.swift */; };
@@ -81,6 +82,7 @@
 		C6BFB9E3225779D9006EBE36 /* Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
 		C6BFB9E522577BFB006EBE36 /* UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
 		C6BFB9E72257867C006EBE36 /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
+		C6BFB9E922578938006EBE36 /* CategoriesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesTableViewController.swift; sourceTree = "<group>"; };
 		C6CA661322450C0900AA37B6 /* ScannerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScannerViewController.swift; sourceTree = "<group>"; };
 		C6CA66172245106A00AA37B6 /* RecipesDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipesDetailViewController.swift; sourceTree = "<group>"; };
 		C6CA661A2245161000AA37B6 /* Recipe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recipe.swift; sourceTree = "<group>"; };
@@ -216,6 +218,7 @@
 				C6273B3122548C5B0029F300 /* IngredientsDetailViewController.swift */,
 				C673491C2256426F00C29FF9 /* SearchTableViewController.swift */,
 				C673491E2256477500C29FF9 /* FavouriteRecipesViewController.swift */,
+				C6BFB9E922578938006EBE36 /* CategoriesTableViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -505,6 +508,7 @@
 				C673491F2256477500C29FF9 /* FavouriteRecipesViewController.swift in Sources */,
 				C673491D2256426F00C29FF9 /* SearchTableViewController.swift in Sources */,
 				C6CA662122451C6400AA37B6 /* IngredientsTableViewController.swift in Sources */,
+				C6BFB9EA22578938006EBE36 /* CategoriesTableViewController.swift in Sources */,
 				C6BFB9E622577BFB006EBE36 /* UIViewController.swift in Sources */,
 				C6CA661422450C0900AA37B6 /* ScannerViewController.swift in Sources */,
 			);
