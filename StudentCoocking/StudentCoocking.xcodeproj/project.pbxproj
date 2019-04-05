@@ -23,6 +23,8 @@
 		C68578EF224508FD004217D5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C68578ED224508FD004217D5 /* LaunchScreen.storyboard */; };
 		C68578FA224508FD004217D5 /* StudentCoockingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C68578F9224508FD004217D5 /* StudentCoockingTests.swift */; };
 		C6857905224508FD004217D5 /* StudentCoockingUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6857904224508FD004217D5 /* StudentCoockingUITests.swift */; };
+		C6BFB9E4225779D9006EBE36 /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6BFB9E3225779D9006EBE36 /* Helper.swift */; };
+		C6BFB9E622577BFB006EBE36 /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6BFB9E522577BFB006EBE36 /* UIViewController.swift */; };
 		C6CA661422450C0900AA37B6 /* ScannerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6CA661322450C0900AA37B6 /* ScannerViewController.swift */; };
 		C6CA66182245106A00AA37B6 /* RecipesDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6CA66172245106A00AA37B6 /* RecipesDetailViewController.swift */; };
 		C6CA661B2245161000AA37B6 /* Recipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6CA661A2245161000AA37B6 /* Recipe.swift */; };
@@ -75,6 +77,8 @@
 		C6857900224508FD004217D5 /* StudentCoockingUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = StudentCoockingUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C6857904224508FD004217D5 /* StudentCoockingUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentCoockingUITests.swift; sourceTree = "<group>"; };
 		C6857906224508FD004217D5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C6BFB9E3225779D9006EBE36 /* Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
+		C6BFB9E522577BFB006EBE36 /* UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
 		C6CA661322450C0900AA37B6 /* ScannerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScannerViewController.swift; sourceTree = "<group>"; };
 		C6CA66172245106A00AA37B6 /* RecipesDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipesDetailViewController.swift; sourceTree = "<group>"; };
 		C6CA661A2245161000AA37B6 /* Recipe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recipe.swift; sourceTree = "<group>"; };
@@ -127,6 +131,7 @@
 			isa = PBXGroup;
 			children = (
 				C6728FE62248E42100260B90 /* Array+Extensions.swift */,
+				C6BFB9E522577BFB006EBE36 /* UIViewController.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -156,6 +161,7 @@
 		C68578E1224508FC004217D5 /* StudentCoocking */ = {
 			isa = PBXGroup;
 			children = (
+				C6BFB9E2225779B1006EBE36 /* Helpers */,
 				C6728FE52248E40800260B90 /* Extensions */,
 				C6CA6619224515DD00AA37B6 /* Services */,
 				C6CA661222450B7100AA37B6 /* Views */,
@@ -186,6 +192,14 @@
 				C6857906224508FD004217D5 /* Info.plist */,
 			);
 			path = StudentCoockingUITests;
+			sourceTree = "<group>";
+		};
+		C6BFB9E2225779B1006EBE36 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				C6BFB9E3225779D9006EBE36 /* Helper.swift */,
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 		C6CA661022450B5500AA37B6 /* Controllers */ = {
@@ -475,6 +489,7 @@
 			files = (
 				6575FB602253716900A0E44A /* RecipesTableViewController.swift in Sources */,
 				C68578E7224508FC004217D5 /* SettingsViewController.swift in Sources */,
+				C6BFB9E4225779D9006EBE36 /* Helper.swift in Sources */,
 				C6CA661B2245161000AA37B6 /* Recipe.swift in Sources */,
 				C6CA661F224517F700AA37B6 /* TheMealDBService.swift in Sources */,
 				C6728FE72248E42100260B90 /* Array+Extensions.swift in Sources */,
@@ -486,6 +501,7 @@
 				C673491F2256477500C29FF9 /* FavouriteRecipesViewController.swift in Sources */,
 				C673491D2256426F00C29FF9 /* SearchTableViewController.swift in Sources */,
 				C6CA662122451C6400AA37B6 /* IngredientsTableViewController.swift in Sources */,
+				C6BFB9E622577BFB006EBE36 /* UIViewController.swift in Sources */,
 				C6CA661422450C0900AA37B6 /* ScannerViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

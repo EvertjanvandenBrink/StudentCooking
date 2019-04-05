@@ -9,7 +9,8 @@
 import UIKit
 
 class RecipesTableViewController: UITableViewController {
-
+    static let shared = RecipesTableViewController()
+    
     var recipes = [Recipe]()
     
     func completionFetchLatestRecipes(recipes: [Recipe]?, error: Error?) {
@@ -83,16 +84,26 @@ class RecipesTableViewController: UITableViewController {
         }
     }
     
+    func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
+        return true
+    }
+    
     override func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
-        let favorite = UITableViewRowAction(style: .normal, title: "Favorite") { (action, indexPath) in
+        let addToFavouritesAction = UITableViewRowAction(style: .normal, title: "Favorite") { (action, indexPath) in
             let recipe = self.recipes[indexPath.row]
             self.addToFavourites(recipe: recipe)
         }
-        favorite.backgroundColor = UIColor.green
-        return [favorite]
+        addToFavouritesAction.backgroundColor = UIColor.green
+        
+        return [addToFavouritesAction]
     }
     
     func addToFavourites(recipe: Recipe) {
-        FavouriteRecipesViewController().addToFavourite(recipe)
+        if Helper.app.favouriteRecipesContainsRecipe(recipe) {
+            self.showAlert(title: "Alert!", message: "Recipe is already a favourite!")
+        } else {
+            favouriteRecipes.append(recipe)
+            self.showAlert(title: "Alert!", message: "Recipe is added to favourites!")
+        }
     }
 }
