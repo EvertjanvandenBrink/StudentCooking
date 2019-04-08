@@ -22,6 +22,8 @@ class SubscriptionsTableViewController: UITableViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(true)
         
+        print(subscribedIngredients.count)
+        
         if subscribedCategories.count > 0 {
             self.updateUI(with: subscribedCategories)
         }
