@@ -1,31 +1,36 @@
 //
-//  CategoriesTableViewController.swift
+//  FavouriteRecipesViewController.swift
 //  StudentCoocking
 //
-//  Created by Evertjan van den Brink on 05/04/2019.
+//  Created by Evertjan van den Brink on 04/04/2019.
 //  Copyright © 2019 Evertjan van den Brink. All rights reserved.
 //
 
 import UIKit
 
-class CategoriesTableViewController: UITableViewController {
-    var categories = [Category]()
-    
-    func completionFetchAllCategories(categories: [Category]?, error: Error?) {
-        if let categories = categories {
-            self.updateUI(with: categories)
-        }
-    }
+var subscribedCategories: [Category] = []
+class SubscriptionsTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        TheMealDBService.shared.fetchAllCategories(completionHandler: completionFetchAllCategories)
+        if subscribedCategories.count > 0 {
+            self.updateUI(with: subscribedCategories)
+        }
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(true)
+        
+        if subscribedCategories.count > 0 {
+            self.updateUI(with: subscribedCategories)
+        }
     }
     
     func updateUI(with categories: [Category]) {
         DispatchQueue.main.async {
-            self.categories = categories
+            subscribedCategories = categories
             self.tableView.reloadData()
+            self.updateBadgeNumber()
         }
     }
     
@@ -34,7 +39,7 @@ class CategoriesTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return categories.count
+        return subscribedCategories.count
     }
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -42,13 +47,13 @@ class CategoriesTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "categoryIdentifier", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "subscriptionsIdentifier", for: indexPath)
         configure(cell: cell, forItemAt: indexPath)
         return cell
     }
     
     func configure(cell: UITableViewCell, forItemAt indexPath: IndexPath) {
-        let category = categories[indexPath.row]
+        let category = subscribedCategories[indexPath.row]
         
         cell.textLabel?.text = category.strCategory
         if let url = URL(string: category.strCategoryThumb) {
@@ -66,10 +71,10 @@ class CategoriesTableViewController: UITableViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "CategoriesDetailSegue" {
+        if segue.identifier == "CategoryDetailSegue" {
             let categoriesDetailViewController = segue.destination as! CategoriesDetailViewController
             let index = tableView.indexPathForSelectedRow!.row
-            categoriesDetailViewController.category = categories[index]
+            categoriesDetailViewController.category = subscribedCategories[index]
         }
     }
     
@@ -78,21 +83,18 @@ class CategoriesTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
-        let subscribeOnCategoryAction = UITableViewRowAction(style: .normal, title: "Subscribe") { (action, indexPath) in
-            let category = self.categories[indexPath.row]
-            self.subscribeOnCategory(category: category)
+        let deleteAction = UITableViewRowAction(style: .normal, title: "Delete") { (action, indexPath) in
+            let category = subscribedCategories[indexPath.row]
+            Helper.app.deleteFromSubscriptions(category: category)
+            self.updateUI(with: subscribedCategories)
         }
-        subscribeOnCategoryAction.backgroundColor = UIColor.blue
-    
-        return [subscribeOnCategoryAction]
+        deleteAction.backgroundColor = UIColor.red
+        
+        return [deleteAction]
     }
     
-    func subscribeOnCategory(category: Category) {
-        if Helper.app.subscribedCategoriesContainsCategory(category) {
-            self.showAlert(title: "Alert!", message: "You have already subscribed on \(category.strCategory)!")
-        } else {
-            subscribedCategories.append(category)
-            self.showAlert(title: "Alert!", message: "\(category.strCategory) is added to your subscriptions!")
-        }
+    private func updateBadgeNumber() {
+        let badgeValue = subscribedCategories.count > 0 ? "\(subscribedCategories.count)" : nil
+        navigationController?.tabBarItem.badgeValue = badgeValue
     }
 }
