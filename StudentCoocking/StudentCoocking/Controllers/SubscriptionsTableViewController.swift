@@ -9,6 +9,7 @@
 import UIKit
 
 var subscribedCategories: [Category] = []
+var subscribedIngredients: [Meal] = []
 class SubscriptionsTableViewController: UITableViewController {
     
     override func viewDidLoad() {
@@ -85,7 +86,7 @@ class SubscriptionsTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
         let deleteAction = UITableViewRowAction(style: .normal, title: "Delete") { (action, indexPath) in
             let category = subscribedCategories[indexPath.row]
-            Helper.app.deleteFromSubscriptions(category: category)
+            Helper.app.deleteFromSubscribedCategories(category: category)
             self.updateUI(with: subscribedCategories)
         }
         deleteAction.backgroundColor = UIColor.red

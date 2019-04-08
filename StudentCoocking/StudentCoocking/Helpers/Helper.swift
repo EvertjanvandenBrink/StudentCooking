@@ -43,10 +43,27 @@ class Helper {
         return false
     }
     
-    func deleteFromSubscriptions(category: Category) {
+    func subscribedIngredientsContainsIngredient(_ ingredient: Meal) -> Bool {
+        for i in 0..<subscribedIngredients.count {
+            if subscribedIngredients[i].strIngredient == ingredient.strIngredient {
+                return true
+            }
+        }
+        return false
+    }
+    
+    func deleteFromSubscribedCategories(category: Category) {
         for i in 0..<subscribedCategories.count {
             if subscribedCategories[i].strCategory == category.strCategory {
                 subscribedCategories.remove(at: i)
+            }
+        }
+    }
+    
+    func deleteFromSubscribedIngredients(ingredient: Meal) {
+        for i in 0..<subscribedIngredients.count {
+            if subscribedIngredients[i].strIngredient == ingredient.strIngredient {
+                subscribedIngredients.remove(at: i)
             }
         }
     }
