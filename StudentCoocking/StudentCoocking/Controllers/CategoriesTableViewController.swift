@@ -72,4 +72,27 @@ class CategoriesTableViewController: UITableViewController {
             categoriesDetailViewController.category = categories[index]
         }
     }
+    
+    func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
+        return true
+    }
+    
+    override func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
+        let subscribeOnCategoryAction = UITableViewRowAction(style: .normal, title: "Subscribe") { (action, indexPath) in
+            let category = self.categories[indexPath.row]
+            self.subscribeOnCategory(category: category)
+        }
+        subscribeOnCategoryAction.backgroundColor = UIColor.blue
+    
+        return [subscribeOnCategoryAction]
+    }
+    
+    func subscribeOnCategory(category: Category) {
+        if Helper.app.subscribedCategoriesContainsCategory(category) {
+            self.showAlert(title: "Alert!", message: "You have already subscribed on \(category.strCategory)!")
+        } else {
+            subscribedCategories.append(category)
+            self.showAlert(title: "Alert!", message: "\(category.strCategory) is added to your subscriptions!")
+        }
+    }
 }
