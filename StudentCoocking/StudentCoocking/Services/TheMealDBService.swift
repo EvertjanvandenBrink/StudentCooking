@@ -129,6 +129,21 @@ class TheMealDBService {
         }
     }
     
+    func fetchFilterRecipeByIngredient(ingredient: String, completionHandler: @escaping ([Recipe]?, Error?) -> ()) {
+        Alamofire.request(getData(url: "filter.php?i=\(ingredient)")).responseJSON { (response) -> Void in
+            switch response.result {
+            case .success(_):
+                guard let meals = try? JSONDecoder().decode(Meals.self, from: response.data!) else {
+                    print("Error: Couldn't decode data into Recipes")
+                    return
+                }
+                completionHandler(meals.meals, nil)
+            case .failure(let error):
+                completionHandler(nil, error)
+            }
+        }
+    }
+    
     private func getData(url: String) -> String {
         return "\(API_URL)/\(API_KEY)/\(url)";
     }
