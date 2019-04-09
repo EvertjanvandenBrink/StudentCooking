@@ -12,7 +12,6 @@ import UIKit
 class ScannerViewController: UIViewController, AVCaptureMetadataOutputObjectsDelegate {
     var captureSession: AVCaptureSession!
     var previewLayer: AVCaptureVideoPreviewLayer!
-    static let shared = ScannerViewController()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -92,7 +91,7 @@ class ScannerViewController: UIViewController, AVCaptureMetadataOutputObjectsDel
     }
     
     func found(code: String) {
-        JSONParser.shared.showRecipesByRecognisedIngredient(code: code)
+        JSONParser.shared.addIngredientToSubscriptions(code: code)
     }
     
     override var prefersStatusBarHidden: Bool {
