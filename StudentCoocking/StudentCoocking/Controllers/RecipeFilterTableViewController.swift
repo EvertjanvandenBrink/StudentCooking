@@ -56,7 +56,7 @@ class RecipeFilterTableViewController: UITableViewController {
             }
         })
     }
-        
+    
     override func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
@@ -65,7 +65,7 @@ class RecipeFilterTableViewController: UITableViewController {
         return self.categories.count
     }
     
-     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "filterIdentifier", for: indexPath)
         cell.textLabel?.text = self.categories[indexPath.row].strCategory
         
@@ -74,7 +74,7 @@ class RecipeFilterTableViewController: UITableViewController {
         }
         
         return cell
-     }
+    }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
@@ -85,7 +85,7 @@ class RecipeFilterTableViewController: UITableViewController {
         if(self.checkedCategoryIndex != indexPath.row) {
             tableView.cellForRow(at: indexPath)?.accessoryType = UITableViewCell.AccessoryType.checkmark
         }
-
+        
         self.checkedCategoryIndex = indexPath.row
     }
     
