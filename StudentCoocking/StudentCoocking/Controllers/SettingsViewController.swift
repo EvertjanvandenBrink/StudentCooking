@@ -9,12 +9,46 @@
 import UIKit
 
 class SettingsViewController: UIViewController {
-
+    
+    @IBOutlet weak var app_name: UILabel!
+    @IBOutlet weak var reset_app: UISwitch!
+    @IBOutlet weak var version_number: UILabel!
+    @IBOutlet weak var build_number: UILabel!
+    @IBOutlet weak var creators: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        
+        registerSettingsBundle()
+        updateDisplayFromDefaults()
+        NotificationCenter.default.addObserver(self, selector: #selector(SettingsViewController.defaultsChanged), name: UserDefaults.didChangeNotification, object: nil)
+        defaultsChanged()
     }
-
-
+    
+    func registerSettingsBundle(){
+        let appDefaults = [String:AnyObject]()
+        UserDefaults.standard.register(defaults: appDefaults)
+    }
+    
+    func updateDisplayFromDefaults() {
+        let defaults = UserDefaults.standard
+        
+        if (defaults.string(forKey: "app_name") != nil) {
+            app_name.text = defaults.string(forKey: "app_name")
+        } else {
+            app_name.text = "StudentCooking"
+        }
+        reset_app.isOn = defaults.bool(forKey: "RESET_APP_KEY")
+        version_number.text = defaults.string(forKey: "version_preference")
+        build_number.text = defaults.string(forKey: "build_preference")
+        if (defaults.string(forKey: "creators") != nil) {
+            creators.text = defaults.string(forKey: "creators")
+        } else {
+            creators.text = "Jesper Menting & Evertjan van den Brink"
+        }
+    }
+    
+    @objc func defaultsChanged(){
+        // add functionality to change defaults....
+    }
 }
-
