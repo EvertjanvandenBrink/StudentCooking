@@ -1,0 +1,24 @@
+{
+    "codes" : [
+        {
+            "id" : "0705632085943",
+            "ingredientName" : "Aubergine"
+        },
+        {
+            "id" : "0036000291452",
+            "ingredientName" : "Bacon"
+        },
+        {
+            "id" : "9501101530003",
+            "ingredientName" : "Brandy"
+        },
+        {
+            "id" : "http://www.cognex.com",
+            "ingredientName" : "Bread"
+        },
+        {
+            "id" : "https://ktch.tv/8jfY",
+            "ingredientName" : "Butter"
+        }
+    ]
+}
