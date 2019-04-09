@@ -442,7 +442,7 @@
         <!--Recipes Table View Controller-->
         <scene sceneID="LBo-7y-Oua">
             <objects>
-                <tableViewController id="lmV-pD-LR5" customClass="RecipesTableViewController" customModule="StudentCoocking" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="recipesTableViewController" id="lmV-pD-LR5" customClass="RecipesTableViewController" customModule="StudentCoocking" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="6pT-vD-3Dj">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -921,7 +921,7 @@
         <image name="search" width="30" height="30"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="yIV-Ys-odD"/>
+        <segue reference="bpi-5Y-mSE"/>
         <segue reference="k9D-KO-JOW"/>
     </inferredMetricsTieBreakers>
 </document>

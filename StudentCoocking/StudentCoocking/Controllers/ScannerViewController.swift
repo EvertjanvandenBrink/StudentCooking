@@ -91,7 +91,7 @@ class ScannerViewController: UIViewController, AVCaptureMetadataOutputObjectsDel
     }
     
     func found(code: String) {
-        print(code)
+        JSONParser.shared.addIngredientToSubscriptions(code: code)
     }
     
     override var prefersStatusBarHidden: Bool {
