@@ -90,5 +90,27 @@ class IngredientsTableViewController: UITableViewController {
             ingredientsDetailViewController.ingredient = ingredients[index]
         }
     }
+    
+    func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
+        return true
+    }
+    
+    override func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
+        let subscribeOnIngredientAction = UITableViewRowAction(style: .normal, title: "Subscribe") { (action, indexPath) in
+            let ingredient = self.ingredients[indexPath.row]
+            self.subscribeOnIngredient(ingredient: ingredient)
+        }
+        subscribeOnIngredientAction.backgroundColor = UIColor.blue
+        
+        return [subscribeOnIngredientAction]
+    }
+    
+    func subscribeOnIngredient(ingredient: Meal) {
+        if Helper.app.subscribedIngredientsContainsIngredient(ingredient) {
+            self.showAlert(title: "Alert!", message: "You have already subscribed on \(ingredient.strIngredient)!")
+        } else {
+            subscribedIngredients.append(ingredient)
+            self.showAlert(title: "Alert!", message: "\(ingredient.strIngredient) is added to your subscriptions!")
+        }
+    }
 }
-

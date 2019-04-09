@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   type = "0"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "StudentCoocking/Controllers/SettingsViewController.swift"
+            timestampString = "576501121.405437"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "17"
+            endingLineNumber = "17"
+            landmarkName = "SettingsViewController"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "StudentCoocking.SettingsViewController.creators.getter : Swift.Optional&lt;__C.UILabel&gt;"
+                  moduleName = "StudentCoocking"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/evertjanvandenbrink/MAD/DIA/dia-app2-2019-evertjan-jesper/StudentCoocking/StudentCoocking/Controllers/SettingsViewController.swift"
+                  timestampString = "576498850.691732"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "17"
+                  endingLineNumber = "17"
+                  offsetFromSymbolStart = "128">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "StudentCoocking.SettingsViewController.creators.setter : Swift.Optional&lt;__C.UILabel&gt;"
+                  moduleName = "StudentCoocking"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/evertjanvandenbrink/MAD/DIA/dia-app2-2019-evertjan-jesper/StudentCoocking/StudentCoocking/Controllers/SettingsViewController.swift"
+                  timestampString = "576498850.693588"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "17"
+                  endingLineNumber = "17"
+                  offsetFromSymbolStart = "184">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "StudentCoocking.SettingsViewController.creators.modify : Swift.Optional&lt;__C.UILabel&gt;"
+                  moduleName = "StudentCoocking"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/evertjanvandenbrink/MAD/DIA/dia-app2-2019-evertjan-jesper/StudentCoocking/StudentCoocking/Controllers/SettingsViewController.swift"
+                  timestampString = "576498850.695322"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "72">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "StudentCoocking.SettingsViewController.creators.modify : Swift.Optional&lt;__C.UILabel&gt; with unmangled suffix &quot;.resume.0&quot;"
+                  moduleName = "StudentCoocking"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/evertjanvandenbrink/MAD/DIA/dia-app2-2019-evertjan-jesper/StudentCoocking/StudentCoocking/Controllers/SettingsViewController.swift"
+                  timestampString = "576498850.697019"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "17"
+                  endingLineNumber = "17"
+                  offsetFromSymbolStart = "72">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "StudentCoocking.SettingsViewController.init(nibName: Swift.Optional&lt;Swift.String&gt;, bundle: Swift.Optional&lt;__C.NSBundle&gt;) -&gt; StudentCoocking.SettingsViewController"
+                  moduleName = "StudentCoocking"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/evertjanvandenbrink/MAD/DIA/dia-app2-2019-evertjan-jesper/StudentCoocking/StudentCoocking/Controllers/SettingsViewController.swift"
+                  timestampString = "576498850.698691"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "17"
+                  endingLineNumber = "17"
+                  offsetFromSymbolStart = "524">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "StudentCoocking.SettingsViewController.init(coder: __C.NSCoder) -&gt; Swift.Optional&lt;StudentCoocking.SettingsViewController&gt;"
+                  moduleName = "StudentCoocking"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/evertjanvandenbrink/MAD/DIA/dia-app2-2019-evertjan-jesper/StudentCoocking/StudentCoocking/Controllers/SettingsViewController.swift"
+                  timestampString = "576498850.700404"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "17"
+                  endingLineNumber = "17"
+                  offsetFromSymbolStart = "468">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>

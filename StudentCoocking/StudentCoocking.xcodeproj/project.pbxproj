@@ -30,12 +30,17 @@
 		C6BFB9E82257867C006EBE36 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6BFB9E72257867C006EBE36 /* Category.swift */; };
 		C6BFB9EA22578938006EBE36 /* CategoriesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6BFB9E922578938006EBE36 /* CategoriesTableViewController.swift */; };
 		C6BFB9EC22578FCC006EBE36 /* CategoriesDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6BFB9EB22578FCC006EBE36 /* CategoriesDetailViewController.swift */; };
+		C6BFB9F0225B6139006EBE36 /* SubscriptionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6BFB9EF225B6139006EBE36 /* SubscriptionsViewController.swift */; };
+		C6BFB9F2225B6A44006EBE36 /* subscribedCategoriesCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6BFB9F1225B6A44006EBE36 /* subscribedCategoriesCellView.swift */; };
+		C6BFB9F4225B6A73006EBE36 /* subscribedIngredientsCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6BFB9F3225B6A73006EBE36 /* subscribedIngredientsCellView.swift */; };
 		C6CA661422450C0900AA37B6 /* ScannerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6CA661322450C0900AA37B6 /* ScannerViewController.swift */; };
 		C6CA66182245106A00AA37B6 /* RecipesDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6CA66172245106A00AA37B6 /* RecipesDetailViewController.swift */; };
 		C6CA661B2245161000AA37B6 /* Recipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6CA661A2245161000AA37B6 /* Recipe.swift */; };
 		C6CA661D2245162900AA37B6 /* Ingredient.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6CA661C2245162900AA37B6 /* Ingredient.swift */; };
 		C6CA661F224517F700AA37B6 /* TheMealDBService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6CA661E224517F700AA37B6 /* TheMealDBService.swift */; };
 		C6CA662122451C6400AA37B6 /* IngredientsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6CA662022451C6400AA37B6 /* IngredientsTableViewController.swift */; };
+		C6EB474F225C991D00522F46 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = C6EB474E225C991D00522F46 /* Settings.bundle */; };
+		C6EB4751225C9EAA00522F46 /* SettingsBundleHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6EB4750225C9EAA00522F46 /* SettingsBundleHelper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -89,12 +94,17 @@
 		C6BFB9E72257867C006EBE36 /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
 		C6BFB9E922578938006EBE36 /* CategoriesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesTableViewController.swift; sourceTree = "<group>"; };
 		C6BFB9EB22578FCC006EBE36 /* CategoriesDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesDetailViewController.swift; sourceTree = "<group>"; };
+		C6BFB9EF225B6139006EBE36 /* SubscriptionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscriptionsViewController.swift; sourceTree = "<group>"; };
+		C6BFB9F1225B6A44006EBE36 /* subscribedCategoriesCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = subscribedCategoriesCellView.swift; sourceTree = "<group>"; };
+		C6BFB9F3225B6A73006EBE36 /* subscribedIngredientsCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = subscribedIngredientsCellView.swift; sourceTree = "<group>"; };
 		C6CA661322450C0900AA37B6 /* ScannerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScannerViewController.swift; sourceTree = "<group>"; };
 		C6CA66172245106A00AA37B6 /* RecipesDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipesDetailViewController.swift; sourceTree = "<group>"; };
 		C6CA661A2245161000AA37B6 /* Recipe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recipe.swift; sourceTree = "<group>"; };
 		C6CA661C2245162900AA37B6 /* Ingredient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ingredient.swift; sourceTree = "<group>"; };
 		C6CA661E224517F700AA37B6 /* TheMealDBService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TheMealDBService.swift; sourceTree = "<group>"; };
 		C6CA662022451C6400AA37B6 /* IngredientsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngredientsTableViewController.swift; sourceTree = "<group>"; };
+		C6EB474E225C991D00522F46 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
+		C6EB4750225C9EAA00522F46 /* SettingsBundleHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsBundleHelper.swift; sourceTree = "<group>"; };
 		E14CB1EB2899FB56E70BD718 /* Pods_StudentCoockingUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_StudentCoockingUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EDC71F42B4FF50A11CE9A182 /* Pods-StudentCoockingUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StudentCoockingUITests.debug.xcconfig"; path = "Target Support Files/Pods-StudentCoockingUITests/Pods-StudentCoockingUITests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -182,6 +192,7 @@
 				C68578EB224508FD004217D5 /* Assets.xcassets */,
 				C68578ED224508FD004217D5 /* LaunchScreen.storyboard */,
 				C68578F0224508FD004217D5 /* Info.plist */,
+				C6EB474E225C991D00522F46 /* Settings.bundle */,
 			);
 			path = StudentCoocking;
 			sourceTree = "<group>";
@@ -208,6 +219,7 @@
 			isa = PBXGroup;
 			children = (
 				C6BFB9E3225779D9006EBE36 /* Helper.swift */,
+				C6EB4750225C9EAA00522F46 /* SettingsBundleHelper.swift */,
 				6514F8E8225CA251002213A8 /* ImageHelper.swift */,
 			);
 			path = Helpers;
@@ -228,6 +240,7 @@
 				C673491E2256477500C29FF9 /* FavouriteRecipesViewController.swift */,
 				C6BFB9E922578938006EBE36 /* CategoriesTableViewController.swift */,
 				C6BFB9EB22578FCC006EBE36 /* CategoriesDetailViewController.swift */,
+				C6BFB9EF225B6139006EBE36 /* SubscriptionsViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -245,6 +258,8 @@
 		C6CA661222450B7100AA37B6 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				C6BFB9F1225B6A44006EBE36 /* subscribedCategoriesCellView.swift */,
+				C6BFB9F3225B6A73006EBE36 /* subscribedIngredientsCellView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -378,6 +393,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C6EB474F225C991D00522F46 /* Settings.bundle in Resources */,
 				C68578EF224508FD004217D5 /* LaunchScreen.storyboard in Resources */,
 				C68578EC224508FD004217D5 /* Assets.xcassets in Resources */,
 				C68578EA224508FC004217D5 /* Main.storyboard in Resources */,
@@ -509,7 +525,9 @@
 				C6CA661F224517F700AA37B6 /* TheMealDBService.swift in Sources */,
 				C6BFB9EC22578FCC006EBE36 /* CategoriesDetailViewController.swift in Sources */,
 				C6728FE72248E42100260B90 /* Array+Extensions.swift in Sources */,
+				C6BFB9F4225B6A73006EBE36 /* subscribedIngredientsCellView.swift in Sources */,
 				C68578E3224508FC004217D5 /* AppDelegate.swift in Sources */,
+				C6EB4751225C9EAA00522F46 /* SettingsBundleHelper.swift in Sources */,
 				C6273B3222548C5B0029F300 /* IngredientsDetailViewController.swift in Sources */,
 				65A54E94225B93500063DB88 /* RecipeFilterTableViewController.swift in Sources */,
 				C68578E5224508FC004217D5 /* HomeViewController.swift in Sources */,
@@ -522,6 +540,8 @@
 				C6BFB9EA22578938006EBE36 /* CategoriesTableViewController.swift in Sources */,
 				C6BFB9E622577BFB006EBE36 /* UIViewController.swift in Sources */,
 				C6CA661422450C0900AA37B6 /* ScannerViewController.swift in Sources */,
+				C6BFB9F2225B6A44006EBE36 /* subscribedCategoriesCellView.swift in Sources */,
+				C6BFB9F0225B6139006EBE36 /* SubscriptionsViewController.swift in Sources */,
 				6514F8E9225CA251002213A8 /* ImageHelper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
