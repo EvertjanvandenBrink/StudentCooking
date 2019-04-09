@@ -1,8 +1,9 @@
 //
 //  RecipeFilterTableViewController.swift
-//  Alamofire
+//  StudentCoocking
 //
-//  Created by Jesper Menting on 08/04/2019.
+//  Created by Evertjan van den Brink on 09/04/2019.
+//  Copyright © 2019 Evertjan van den Brink. All rights reserved.
 //
 
 import UIKit
