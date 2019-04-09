@@ -17,6 +17,7 @@ class RecipesTableViewController: UITableViewController {
     var imageCache = NSCache<AnyObject, AnyObject>()
     var count = 0
     var reloadData = false
+    var recipesDetailViewController: RecipesDetailViewController?
     
     func completionFetchRecipes(recipes: [Recipe]?, error: Error?) {
         if let recipes = recipes {
@@ -100,11 +101,22 @@ class RecipesTableViewController: UITableViewController {
         self.present(recipesDetailViewController, animated: true, completion: nil)
     }
     
+    func fetchMealByIdCompletionHandler(recipe: Recipe?, error: Error?) {
+        self.recipesDetailViewController?.recipe = recipe!
+        self.recipesDetailViewController?.updateUI()
+    }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "RecipesDetailSegue" {
-            let recipesDetailViewController = segue.destination as! RecipesDetailViewController
+            self.recipesDetailViewController = segue.destination as? RecipesDetailViewController
             let index = tableView.indexPathForSelectedRow!.row
-            recipesDetailViewController.recipe = recipes[index]
+            let recipe = self.recipes[index]
+            if(recipe.strCategory == nil) {
+                TheMealDBService.shared.fetchMealById(id: recipe.idMeal!, completionHandler: fetchMealByIdCompletionHandler)
+            } else {
+                recipesDetailViewController?.recipe = recipe
+            }
+            
         }
         
         if segue.identifier == "popoverSegue" {

@@ -18,6 +18,21 @@ class TheMealDBService {
     static let shared = TheMealDBService()
     
     init() {}
+    
+    func fetchMealById(id: String, completionHandler: @escaping (Recipe?, Error?) -> ()) {
+        Alamofire.request(getData(url: "lookup.php?i=\(id)")).responseJSON { (response) -> Void in
+            switch response.result {
+            case .success(_):
+                guard let recipe = try? JSONDecoder().decode(Meals.self, from: response.data!) else {
+                    print("Error: Couldn't decode data into Meal")
+                    return
+                }
+                completionHandler(recipe.meals[0], nil)
+            case .failure(let error):
+                completionHandler(nil, error)
+            }
+        }
+    }
 
     func fetchLatestMeals(completionHandler: @escaping ([Recipe]?, Error?) -> ()) {
         Alamofire.request(getData(url: "latest.php")).responseJSON { (response) -> Void in
