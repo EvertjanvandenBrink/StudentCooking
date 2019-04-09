@@ -230,7 +230,7 @@
                                         <connections>
                                             <outlet property="categoryImageView" destination="KhP-Vy-ll0" id="zqg-m9-W4I"/>
                                             <outlet property="nameLabel" destination="ifc-5n-Pkb" id="Ikt-gy-b0j"/>
-                                            <segue destination="wqF-zb-Izp" kind="show" identifier="CategoryDetailSegue" id="spP-aA-G3k"/>
+                                            <segue destination="lmV-pD-LR5" kind="show" identifier="recipesTableViewSegue" id="k9D-KO-JOW"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -902,7 +902,7 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="yIV-Ys-odD"/>
-        <segue reference="lWp-w4-fhN"/>
-        <segue reference="spP-aA-G3k"/>
+        <segue reference="k9D-KO-JOW"/>
+        <segue reference="JFJ-KI-yOa"/>
     </inferredMetricsTieBreakers>
 </document>
