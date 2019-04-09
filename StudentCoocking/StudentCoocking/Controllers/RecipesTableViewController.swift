@@ -96,9 +96,7 @@ class RecipesTableViewController: UITableViewController {
         let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
         let recipesDetailViewController = storyBoard.instantiateViewController(withIdentifier: "recipesDetailViewController") as! RecipesDetailViewController
         recipesDetailViewController.recipe = recipes.randomElement()
-        
-        self.dismiss(animated: true, completion: nil)
-        self.present(recipesDetailViewController, animated: true, completion: nil)
+        self.navigationController?.pushViewController(recipesDetailViewController, animated: true)
     }
     
     func fetchMealByIdCompletionHandler(recipe: Recipe?, error: Error?) {
