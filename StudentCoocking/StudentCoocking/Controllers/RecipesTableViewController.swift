@@ -10,18 +10,29 @@ import UIKit
 
 class RecipesTableViewController: UITableViewController {
     static let shared = RecipesTableViewController()
+    @IBOutlet weak var filterButton: UIBarButtonItem!
     
     var recipes = [Recipe]()
+    var filter: String = ""
+    var imageCache = NSCache<AnyObject, AnyObject>()
+    var count = 0
+    var reloadData = false
     
-    func completionFetchLatestRecipes(recipes: [Recipe]?, error: Error?) {
+    func completionFetchRecipes(recipes: [Recipe]?, error: Error?) {
         if let recipes = recipes {
+            reloadData = true
             self.updateUI(with: recipes)
         }
     }
     
+    @IBAction func filterClicked(_ sender: Any) {
+        self.performSegue(withIdentifier: "popoverSegue", sender: self)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        TheMealDBService.shared.fetchLatestMeals(completionHandler: completionFetchLatestRecipes)
+        imageCache.name = "Recipe image cache"
+        TheMealDBService.shared.fetchLatestMeals(completionHandler: completionFetchRecipes)
     }
 
     func updateUI(with recipes: [Recipe]) {
@@ -46,22 +57,32 @@ class RecipesTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "recipeIdentifier", for: indexPath)
         configure(cell: cell, forItemAt: indexPath)
+        if(count == self.recipes.count && reloadData) {
+            self.tableView.reloadData()
+            count = 0
+            reloadData = false
+        }
         return cell
     }
     
     func configure(cell: UITableViewCell, forItemAt indexPath: IndexPath) {
         let recipe = recipes[indexPath.row]
+        let urlString = recipe.strMealThumb!
+        
+        count = count + 1
         
         cell.textLabel?.text = recipe.strMeal
-        if let url = URL(string: recipe.strMealThumb!) {
-            TheMealDBService.shared.fetchImage(url: url) { (image) in
-                guard let image = image else { return }
-                DispatchQueue.main.async {
-                    if let currentIndexPath = self.tableView.indexPath(for: cell),
-                        currentIndexPath != indexPath {
-                        return
+        
+        if let url = URL(string: urlString) {
+            if let image: UIImage = ImageHelper.app.getImage(urlString: urlString) {
+                cell.imageView?.image = image
+            } else {
+                TheMealDBService.shared.fetchImage(url: url) { (image) in
+                    guard let image = image else { return }
+                    DispatchQueue.main.async {
+                        cell.imageView?.image = image
+                        ImageHelper.app.setImage(urlString: urlString, image: image)
                     }
-                    cell.imageView?.image = image
                 }
             }
         }
@@ -82,8 +103,23 @@ class RecipesTableViewController: UITableViewController {
             let index = tableView.indexPathForSelectedRow!.row
             recipesDetailViewController.recipe = recipes[index]
         }
+        
+        if segue.identifier == "popoverSegue" {
+            let recipeFilterTableViewController = segue.destination as! RecipeFilterTableViewController
+            recipeFilterTableViewController.modalPresentationStyle = UIModalPresentationStyle.popover
+            recipeFilterTableViewController.popoverPresentationController!.delegate = self as? UIPopoverPresentationControllerDelegate
+            recipeFilterTableViewController.filter = self.filter
+            recipeFilterTableViewController.completionHandler = {(categorySelected : String?) in
+                if let category = categorySelected
+                {
+                    self.filter = category
+                    
+                    TheMealDBService.shared.fetchFilterRecipeByCategory(category: self.filter, completionHandler: self.completionFetchRecipes)
+                }
+            }
+        }
     }
-    
+        
     func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
         return true
     }
