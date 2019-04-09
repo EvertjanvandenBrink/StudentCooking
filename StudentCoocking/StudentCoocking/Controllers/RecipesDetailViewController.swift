@@ -20,8 +20,9 @@ class RecipesDetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         instructionsView.isEditable = false
-        
-        updateUI()
+        if(recipe != nil) {
+            updateUI()
+        }
     }
     
     func updateUI() {
