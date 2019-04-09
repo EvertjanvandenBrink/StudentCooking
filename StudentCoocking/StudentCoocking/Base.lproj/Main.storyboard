@@ -230,7 +230,7 @@
                                         <connections>
                                             <outlet property="categoryImageView" destination="KhP-Vy-ll0" id="zqg-m9-W4I"/>
                                             <outlet property="nameLabel" destination="ifc-5n-Pkb" id="Ikt-gy-b0j"/>
-                                            <segue destination="lmV-pD-LR5" kind="show" identifier="recipesTableViewSegue" id="k9D-KO-JOW"/>
+                                            <segue destination="lmV-pD-LR5" kind="show" identifier="recipesTableViewWithCategorySegue" id="k9D-KO-JOW"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -272,7 +272,7 @@
                                         <connections>
                                             <outlet property="ingredientImageView" destination="6Ur-4u-WvP" id="NQ5-c4-95Z"/>
                                             <outlet property="nameLabel" destination="gMk-vX-RIK" id="6FD-Ea-AQt"/>
-                                            <segue destination="w4S-aO-zq3" kind="show" identifier="IngredientsDetailSegue" id="JFJ-KI-yOa"/>
+                                            <segue destination="lmV-pD-LR5" kind="show" identifier="recipesTableViewWithIngredientSegue" id="vps-fF-4jd"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -314,7 +314,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Dbc-62-B3E" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1965.5999999999999" y="-1217.5412293853074"/>
+            <point key="canvasLocation" x="2665" y="-1320"/>
         </scene>
         <!--Categories Detail View Controller-->
         <scene sceneID="33d-uq-uHO">
@@ -923,6 +923,5 @@
     <inferredMetricsTieBreakers>
         <segue reference="yIV-Ys-odD"/>
         <segue reference="k9D-KO-JOW"/>
-        <segue reference="JFJ-KI-yOa"/>
     </inferredMetricsTieBreakers>
 </document>

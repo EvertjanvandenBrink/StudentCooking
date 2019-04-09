@@ -86,22 +86,20 @@ extension SubscriptionsViewController: UITableViewDataSource, UITableViewDelegat
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "recipesTableViewSegue" {
+        if segue.identifier == "recipesTableViewWithCategorySegue" {
             self.recipesTableViewController = segue.destination as? RecipesTableViewController
             let index = subscribedCategoriesTableView.indexPathForSelectedRow!.row
             let categoryName = subscribedCategories[index].strCategory
             
             self.recipesTableViewController?.filter = categoryName
             TheMealDBService.shared.fetchFilterRecipeByCategory(category: categoryName, completionHandler:  completionFetchRecipes)
-        } else if segue.identifier == "CategoriesDetailSegue" {
-            let categoriesDetailViewController = segue.destination as! CategoriesDetailViewController
-            let index = subscribedCategoriesTableView.indexPathForSelectedRow!.row
-            categoriesDetailViewController.category = subscribedCategories[index]
-        } else if segue.identifier == "IngredientsDetailSegue" {
-            let ingredientsDetailViewController = segue.destination as! IngredientsDetailViewController
+        } else if segue.identifier == "recipesTableViewWithIngredientSegue" {
+            self.recipesTableViewController = segue.destination as? RecipesTableViewController
             let index = subscribedIngredientsTableView.indexPathForSelectedRow!.row
-            ingredientsDetailViewController.ingredient = subscribedIngredients[index]
-        }
+            let ingredientName = subscribedIngredients[index].strIngredient
+            
+            TheMealDBService.shared.fetchFilterRecipeByIngredient(ingredient: ingredientName, completionHandler: completionFetchRecipes)
+        } 
     }
     
     func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
