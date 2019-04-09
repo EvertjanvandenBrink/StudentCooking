@@ -12,7 +12,9 @@ class SearchTableViewController: UITableViewController {
     
     var recipes = [Recipe]()
     
-    func completionFetchLatestRecipes(recipes: [Recipe]?, error: Error?) {
+    @IBOutlet weak var searchBar: UISearchBar!
+    
+    func completionFetchRecipesBySearchTerm(recipes: [Recipe]?, error: Error?) {
         if let recipes = recipes {
             self.updateUI(with: recipes)
         }
@@ -20,7 +22,14 @@ class SearchTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        TheMealDBService.shared.fetchLatestMeals(completionHandler: completionFetchLatestRecipes)
+        
+    }
+    
+    func updateSearchResults(for searchController: UISearchController) {
+        let searchTerm = searchController.searchBar.text!.lowercased()
+        print(searchTerm)
+        
+        TheMealDBService.shared.fetchSearchTerm(searchTerm: searchTerm, completionHandler: completionFetchRecipesBySearchTerm)
     }
     
     func updateUI(with recipes: [Recipe]) {
