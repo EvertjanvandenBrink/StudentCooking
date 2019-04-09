@@ -18,13 +18,14 @@ class IngredientsDetailViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-    }
-    
-    override func viewDidAppear(_ animated: Bool) {
+        descriptionView.isEditable = false
+        
         updateUI()
     }
     
     func updateUI() {
+        self.title = ingredient.strIngredient
+        
         nameLabel?.text = ingredient.strIngredient
         descriptionView?.text = ingredient.strDescription
         typeLabel?.text = ingredient.strType

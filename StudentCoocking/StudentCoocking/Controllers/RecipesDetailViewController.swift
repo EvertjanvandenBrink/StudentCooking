@@ -19,13 +19,14 @@ class RecipesDetailViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-    }
-    
-    override func viewDidAppear(_ animated: Bool) {
+        instructionsView.isEditable = false
+        
         updateUI()
     }
     
     func updateUI() {
+        self.title = recipe.strMeal
+        
         nameLabel?.text = recipe.strMeal
         categoryLabel?.text = recipe.strCategory
         tagsLabel?.text = recipe.strTags
