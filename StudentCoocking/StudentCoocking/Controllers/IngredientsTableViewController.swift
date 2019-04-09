@@ -11,6 +11,8 @@ import UIKit
 class IngredientsTableViewController: UITableViewController {
     
     var ingredients = [Meal]()
+    var reloadData = false
+    var count = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -19,6 +21,7 @@ class IngredientsTableViewController: UITableViewController {
     
     func completionFetchAllIngredients(ingredients:  [Meal]?, error: Error?) {
         if let ingredients = ingredients {
+            self.reloadData = true
             self.updateUI(with: ingredients)
         }
     }
@@ -45,6 +48,13 @@ class IngredientsTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ingredientIdentifier", for: indexPath)
         configure(cell: cell, forItemAt: indexPath)
+        
+        if(count == self.ingredients.count && reloadData) {
+            self.tableView.reloadData()
+            self.count = 0
+            self.reloadData = false
+        }
+        
         return cell
     }
     
@@ -53,18 +63,21 @@ class IngredientsTableViewController: UITableViewController {
         
         cell.textLabel?.text = ingredient.strIngredient
         
+        count = count + 1
+        
         let ingredientName = ingredient.strIngredient.replacingOccurrences(of: " ", with: "-")
         let finalUrl = "\(ingredientName).png"
         
         if let url = URL(string: finalUrl) {
-            TheMealDBService.shared.fetchImage(url: url) { (image) in
-                guard let image = image else { return }
-                DispatchQueue.main.async {
-                    if let currentIndexPath = self.tableView.indexPath(for: cell),
-                        currentIndexPath != indexPath {
-                        return
+            if let image: UIImage = ImageHelper.app.getImage(urlString: finalUrl) {
+                cell.imageView?.image = image
+            } else {
+                TheMealDBService.shared.fetchImage(url: url) { (image) in
+                    guard let image = image else { return }
+                    DispatchQueue.main.async {
+                        cell.imageView?.image = image
+                        ImageHelper.app.setImage(urlString: finalUrl, image: image)
                     }
-                    cell.imageView?.image = image
                 }
             }
         }

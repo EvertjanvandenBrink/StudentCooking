@@ -15,9 +15,12 @@ class RecipesTableViewController: UITableViewController {
     var recipes = [Recipe]()
     var filter: String = ""
     var imageCache = NSCache<AnyObject, AnyObject>()
+    var count = 0
+    var reloadData = false
     
     func completionFetchRecipes(recipes: [Recipe]?, error: Error?) {
         if let recipes = recipes {
+            reloadData = true
             self.updateUI(with: recipes)
         }
     }
@@ -54,28 +57,31 @@ class RecipesTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "recipeIdentifier", for: indexPath)
         configure(cell: cell, forItemAt: indexPath)
+        if(count == self.recipes.count && reloadData) {
+            self.tableView.reloadData()
+            count = 0
+            reloadData = false
+        }
         return cell
     }
     
     func configure(cell: UITableViewCell, forItemAt indexPath: IndexPath) {
         let recipe = recipes[indexPath.row]
+        let urlString = recipe.strMealThumb!
+        
+        count = count + 1
         
         cell.textLabel?.text = recipe.strMeal
         
-        if let url = URL(string: recipe.strMealThumb!) {
-            if let image: UIImage = imageCache.object(forKey: recipe.strMealThumb! as AnyObject) as? UIImage {
+        if let url = URL(string: urlString) {
+            if let image: UIImage = ImageHelper.app.getImage(urlString: urlString) {
                 cell.imageView?.image = image
             } else {
                 TheMealDBService.shared.fetchImage(url: url) { (image) in
                     guard let image = image else { return }
                     DispatchQueue.main.async {
-                        if let currentIndexPath = self.tableView.indexPath(for: cell),
-                            currentIndexPath != indexPath {
-                            return
-                        }
                         cell.imageView?.image = image
-                        self.imageCache.setObject(image, forKey: recipe.strMealThumb as AnyObject)
-                        self.tableView.reloadRows(at: [self.tableView.indexPath(for: cell)!], with: UITableView.RowAnimation.automatic)
+                        ImageHelper.app.setImage(urlString: urlString, image: image)
                     }
                 }
             }
