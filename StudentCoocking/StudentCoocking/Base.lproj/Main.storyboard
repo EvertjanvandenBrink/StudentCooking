@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="juk-i3-vbo">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="juk-i3-vbo">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -58,13 +58,23 @@
                                 <outlet property="delegate" destination="c8c-Mx-Di3" id="W6c-l3-yyv"/>
                             </connections>
                         </searchBar>
-                        <connections>
-                            <outlet property="dataSource" destination="c8c-Mx-Di3" id="VAy-13-61X"/>
-                            <outlet property="delegate" destination="c8c-Mx-Di3" id="9xn-YO-Y6Y"/>
-                        </connections>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="recipeIdentifier" rowHeight="67" id="lwy-og-zUM">
+                                <rect key="frame" x="0.0" y="72" width="375" height="67"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="lwy-og-zUM" id="ZZ3-1i-9US">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="66.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="c0z-FO-ReJ" kind="show" identifier="RecipesDetailSegue" id="yIV-Ys-odD"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
                     </tableView>
                     <navigationItem key="navigationItem" title="Search" id="j6l-9h-AKB"/>
                     <connections>
+                        <outlet property="recipesTableView" destination="oS0-mu-NCg" id="7VN-7Q-Uuj"/>
                         <outlet property="searchBar" destination="5jl-Jr-1Nj" id="tSy-QT-nyS"/>
                         <outlet property="searchDisplayController" destination="hGW-y0-yBH" id="wSv-AC-R7L"/>
                     </connections>
@@ -80,7 +90,7 @@
                     </connections>
                 </searchDisplayController>
             </objects>
-            <point key="canvasLocation" x="1967" y="921"/>
+            <point key="canvasLocation" x="1965.5999999999999" y="920.68965517241384"/>
         </scene>
         <!--Favourite recipes-->
         <scene sceneID="DCW-Hj-UCs">
@@ -220,7 +230,7 @@
                                         <connections>
                                             <outlet property="categoryImageView" destination="KhP-Vy-ll0" id="zqg-m9-W4I"/>
                                             <outlet property="nameLabel" destination="ifc-5n-Pkb" id="Ikt-gy-b0j"/>
-                                            <segue destination="wqF-zb-Izp" kind="show" identifier="CategoryDetailSegue" id="spP-aA-G3k"/>
+                                            <segue destination="lmV-pD-LR5" kind="show" identifier="recipesTableViewSegue" id="k9D-KO-JOW"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -911,8 +921,8 @@
         <image name="search" width="30" height="30"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="bpi-5Y-mSE"/>
-        <segue reference="lWp-w4-fhN"/>
-        <segue reference="spP-aA-G3k"/>
+        <segue reference="yIV-Ys-odD"/>
+        <segue reference="k9D-KO-JOW"/>
+        <segue reference="JFJ-KI-yOa"/>
     </inferredMetricsTieBreakers>
 </document>

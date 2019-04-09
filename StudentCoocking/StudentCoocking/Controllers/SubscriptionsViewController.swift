@@ -17,6 +17,7 @@ class SubscriptionsViewController: UIViewController {
     
     let subscribedCategoriesTableCellId = "subscribedCategoriesIdentifier"
     let subscribedIngredientsTableCellId = "subscribedIngredientsIdentifier"
+    var recipesTableViewController: RecipesTableViewController?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -74,8 +75,25 @@ extension SubscriptionsViewController: UITableViewDataSource, UITableViewDelegat
         }
     }
     
+    func completionFetchRecipes(recipes: [Recipe]?, error: Error?) {
+        if let recipes = recipes {
+            print("Recipes: \(recipes)")
+            self.recipesTableViewController?.recipes = recipes
+            
+            self.recipesTableViewController?.reloadData = true
+            self.recipesTableViewController?.updateUI(with: recipes)
+        }
+    }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "CategoriesDetailSegue" {
+        if segue.identifier == "recipesTableViewSegue" {
+            self.recipesTableViewController = segue.destination as? RecipesTableViewController
+            let index = subscribedCategoriesTableView.indexPathForSelectedRow!.row
+            let categoryName = subscribedCategories[index].strCategory
+            
+            self.recipesTableViewController?.filter = categoryName
+            TheMealDBService.shared.fetchFilterRecipeByCategory(category: categoryName, completionHandler:  completionFetchRecipes)
+        } else if segue.identifier == "CategoriesDetailSegue" {
             let categoriesDetailViewController = segue.destination as! CategoriesDetailViewController
             let index = subscribedCategoriesTableView.indexPathForSelectedRow!.row
             categoriesDetailViewController.category = subscribedCategories[index]

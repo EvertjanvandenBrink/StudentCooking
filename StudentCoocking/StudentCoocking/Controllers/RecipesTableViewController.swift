@@ -33,7 +33,10 @@ class RecipesTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         imageCache.name = "Recipe image cache"
-        TheMealDBService.shared.fetchLatestMeals(completionHandler: completionFetchRecipes)
+        
+        if (self.recipes.count < 1) {
+            TheMealDBService.shared.fetchLatestMeals(completionHandler: completionFetchRecipes)
+        }
     }
 
     func updateUI(with recipes: [Recipe]) {

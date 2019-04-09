@@ -8,11 +8,12 @@
 
 import UIKit
 
-class SearchTableViewController: UITableViewController {
+class SearchTableViewController: UITableViewController, UISearchBarDelegate {
     
     var recipes = [Recipe]()
     
     @IBOutlet weak var searchBar: UISearchBar!
+    @IBOutlet var recipesTableView: UITableView!
     
     func completionFetchRecipesBySearchTerm(recipes: [Recipe]?, error: Error?) {
         if let recipes = recipes {
@@ -23,11 +24,11 @@ class SearchTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        searchBar.delegate = self
     }
     
-    func updateSearchResults(for searchController: UISearchController) {
-        let searchTerm = searchController.searchBar.text!.lowercased()
-        print(searchTerm)
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        let searchTerm = searchBar.text!
         
         TheMealDBService.shared.fetchSearchTerm(searchTerm: searchTerm, completionHandler: completionFetchRecipesBySearchTerm)
     }
@@ -35,7 +36,7 @@ class SearchTableViewController: UITableViewController {
     func updateUI(with recipes: [Recipe]) {
         DispatchQueue.main.async {
             self.recipes = recipes
-            self.tableView.reloadData()
+            self.recipesTableView.reloadData()
         }
     }
     
@@ -73,15 +74,6 @@ class SearchTableViewController: UITableViewController {
                 }
             }
         }
-    }
-    
-    override func motionBegan(_ motion: UIEvent.EventSubtype, with event: UIEvent?) {
-        let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-        let recipesDetailViewController = storyBoard.instantiateViewController(withIdentifier: "recipesDetailViewController") as! RecipesDetailViewController
-        recipesDetailViewController.recipe = recipes.randomElement()
-        
-        self.dismiss(animated: true, completion: nil)
-        self.present(recipesDetailViewController, animated: true, completion: nil)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
