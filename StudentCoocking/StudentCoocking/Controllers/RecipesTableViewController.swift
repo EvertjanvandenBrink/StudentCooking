@@ -14,6 +14,7 @@ class RecipesTableViewController: UITableViewController {
     
     var recipes = [Recipe]()
     var filter: String = ""
+    var imageCache = NSCache<AnyObject, AnyObject>()
     
     func completionFetchRecipes(recipes: [Recipe]?, error: Error?) {
         if let recipes = recipes {
@@ -27,6 +28,7 @@ class RecipesTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        imageCache.name = "Recipe image cache"
         TheMealDBService.shared.fetchLatestMeals(completionHandler: completionFetchRecipes)
     }
 
@@ -59,15 +61,22 @@ class RecipesTableViewController: UITableViewController {
         let recipe = recipes[indexPath.row]
         
         cell.textLabel?.text = recipe.strMeal
+        
         if let url = URL(string: recipe.strMealThumb!) {
-            TheMealDBService.shared.fetchImage(url: url) { (image) in
-                guard let image = image else { return }
-                DispatchQueue.main.async {
-                    if let currentIndexPath = self.tableView.indexPath(for: cell),
-                        currentIndexPath != indexPath {
-                        return
+            if let image: UIImage = imageCache.object(forKey: recipe.strMealThumb! as AnyObject) as? UIImage {
+                cell.imageView?.image = image
+            } else {
+                TheMealDBService.shared.fetchImage(url: url) { (image) in
+                    guard let image = image else { return }
+                    DispatchQueue.main.async {
+                        if let currentIndexPath = self.tableView.indexPath(for: cell),
+                            currentIndexPath != indexPath {
+                            return
+                        }
+                        cell.imageView?.image = image
+                        self.imageCache.setObject(image, forKey: recipe.strMealThumb as AnyObject)
+                        self.tableView.reloadRows(at: [self.tableView.indexPath(for: cell)!], with: UITableView.RowAnimation.automatic)
                     }
-                    cell.imageView?.image = image
                 }
             }
         }
