@@ -10,18 +10,24 @@ import UIKit
 
 class RecipesTableViewController: UITableViewController {
     static let shared = RecipesTableViewController()
+    @IBOutlet weak var filterButton: UIBarButtonItem!
     
     var recipes = [Recipe]()
+    var filter: String = ""
     
-    func completionFetchLatestRecipes(recipes: [Recipe]?, error: Error?) {
+    func completionFetchRecipes(recipes: [Recipe]?, error: Error?) {
         if let recipes = recipes {
             self.updateUI(with: recipes)
         }
     }
     
+    @IBAction func filterClicked(_ sender: Any) {
+        self.performSegue(withIdentifier: "popoverSegue", sender: self)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        TheMealDBService.shared.fetchLatestMeals(completionHandler: completionFetchLatestRecipes)
+        TheMealDBService.shared.fetchLatestMeals(completionHandler: completionFetchRecipes)
     }
 
     func updateUI(with recipes: [Recipe]) {
@@ -82,8 +88,23 @@ class RecipesTableViewController: UITableViewController {
             let index = tableView.indexPathForSelectedRow!.row
             recipesDetailViewController.recipe = recipes[index]
         }
+        
+        if segue.identifier == "popoverSegue" {
+            let recipeFilterTableViewController = segue.destination as! RecipeFilterTableViewController
+            recipeFilterTableViewController.modalPresentationStyle = UIModalPresentationStyle.popover
+            recipeFilterTableViewController.popoverPresentationController!.delegate = self as? UIPopoverPresentationControllerDelegate
+            recipeFilterTableViewController.filter = self.filter
+            recipeFilterTableViewController.completionHandler = {(categorySelected : String?) in
+                if let category = categorySelected
+                {
+                    self.filter = category
+                    
+                    TheMealDBService.shared.fetchFilterRecipeByCategory(category: self.filter, completionHandler: self.completionFetchRecipes)
+                }
+            }
+        }
     }
-    
+        
     func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
         return true
     }

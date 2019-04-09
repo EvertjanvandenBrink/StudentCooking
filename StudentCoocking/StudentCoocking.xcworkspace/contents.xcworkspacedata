@@ -2,6 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:/Users/jjwmenting/GIT/School/MAD/dia-app2-2019-evertjan-jesper/StudentCoocking/StudentCoocking/Controllers/RecipeFilterTableViewController.swift">
+   </FileRef>
+   <FileRef
       location = "group:StudentCoocking.xcodeproj">
    </FileRef>
    <FileRef
