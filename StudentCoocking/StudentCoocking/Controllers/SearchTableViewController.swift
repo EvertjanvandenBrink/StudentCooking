@@ -31,13 +31,12 @@ class SearchTableViewController: UITableViewController, UISearchBarDelegate {
         let searchTerm = searchBar.text!
         
         TheMealDBService.shared.fetchSearchTerm(searchTerm: searchTerm, completionHandler: completionFetchRecipesBySearchTerm)
-        searchBar.showsCancelButton.toggle()
     }
     
     func updateUI(with recipes: [Recipe]) {
         DispatchQueue.main.async {
             self.recipes = recipes
-            self.tableView.reloadData()
+            self.recipesTableView.reloadData()
         }
     }
     
