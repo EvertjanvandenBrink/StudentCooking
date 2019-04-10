@@ -86,7 +86,7 @@ class FavouriteRecipesViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
         let deleteAction = UITableViewRowAction(style: .normal, title: "Delete") { (action, indexPath) in
             let recipe = favouriteRecipes[indexPath.row]
-            Helper.app.deleteFromFavourites(recipe: recipe)
+            FavouritesHelper.app.deleteFromFavourites(recipe: recipe)
             self.updateUI(with: favouriteRecipes)
         }
         deleteAction.backgroundColor = UIColor.red

@@ -16,7 +16,8 @@
 		C64CDE22225CC5730048478F /* RecipeFilterTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C64CDE21225CC5730048478F /* RecipeFilterTableViewController.swift */; };
 		C64CDE25225CEA130048478F /* codes.json in Resources */ = {isa = PBXBuildFile; fileRef = C64CDE24225CEA130048478F /* codes.json */; };
 		C64CDE28225CEB080048478F /* JSONParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = C64CDE27225CEB080048478F /* JSONParser.swift */; };
-		C6728FE72248E42100260B90 /* Array+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6728FE62248E42100260B90 /* Array+Extensions.swift */; };
+		C64CDE2A225DE3780048478F /* SubscriptionsHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = C64CDE29225DE3780048478F /* SubscriptionsHelper.swift */; };
+		C64CDE2C225DE4030048478F /* FavouritesHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = C64CDE2B225DE4030048478F /* FavouritesHelper.swift */; };
 		C673491D2256426F00C29FF9 /* SearchTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C673491C2256426F00C29FF9 /* SearchTableViewController.swift */; };
 		C673491F2256477500C29FF9 /* FavouriteRecipesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C673491E2256477500C29FF9 /* FavouriteRecipesViewController.swift */; };
 		C68578E3224508FC004217D5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C68578E2224508FC004217D5 /* AppDelegate.swift */; };
@@ -76,7 +77,8 @@
 		C64CDE21225CC5730048478F /* RecipeFilterTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeFilterTableViewController.swift; sourceTree = "<group>"; };
 		C64CDE24225CEA130048478F /* codes.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = codes.json; sourceTree = "<group>"; };
 		C64CDE27225CEB080048478F /* JSONParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONParser.swift; sourceTree = "<group>"; };
-		C6728FE62248E42100260B90 /* Array+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Extensions.swift"; sourceTree = "<group>"; };
+		C64CDE29225DE3780048478F /* SubscriptionsHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscriptionsHelper.swift; sourceTree = "<group>"; };
+		C64CDE2B225DE4030048478F /* FavouritesHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouritesHelper.swift; sourceTree = "<group>"; };
 		C673491C2256426F00C29FF9 /* SearchTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTableViewController.swift; sourceTree = "<group>"; };
 		C673491E2256477500C29FF9 /* FavouriteRecipesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouriteRecipesViewController.swift; sourceTree = "<group>"; };
 		C68578DF224508FC004217D5 /* StudentCoocking.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StudentCoocking.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -170,7 +172,6 @@
 		C6728FE52248E40800260B90 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				C6728FE62248E42100260B90 /* Array+Extensions.swift */,
 				C6BFB9E522577BFB006EBE36 /* UIViewController.swift */,
 			);
 			path = Extensions;
@@ -243,6 +244,8 @@
 				C6BFB9E3225779D9006EBE36 /* Helper.swift */,
 				C6EB4750225C9EAA00522F46 /* SettingsBundleHelper.swift */,
 				6514F8E8225CA251002213A8 /* ImageHelper.swift */,
+				C64CDE29225DE3780048478F /* SubscriptionsHelper.swift */,
+				C64CDE2B225DE4030048478F /* FavouritesHelper.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -548,12 +551,12 @@
 				C64CDE28225CEB080048478F /* JSONParser.swift in Sources */,
 				C6CA661F224517F700AA37B6 /* TheMealDBService.swift in Sources */,
 				C6BFB9EC22578FCC006EBE36 /* CategoriesDetailViewController.swift in Sources */,
-				C6728FE72248E42100260B90 /* Array+Extensions.swift in Sources */,
 				C6BFB9F4225B6A73006EBE36 /* subscribedIngredientsCellView.swift in Sources */,
 				C68578E3224508FC004217D5 /* AppDelegate.swift in Sources */,
 				C6EB4751225C9EAA00522F46 /* SettingsBundleHelper.swift in Sources */,
 				C6273B3222548C5B0029F300 /* IngredientsDetailViewController.swift in Sources */,
 				C68578E5224508FC004217D5 /* HomeViewController.swift in Sources */,
+				C64CDE2A225DE3780048478F /* SubscriptionsHelper.swift in Sources */,
 				C6CA66182245106A00AA37B6 /* RecipesDetailViewController.swift in Sources */,
 				C6CA661D2245162900AA37B6 /* Ingredient.swift in Sources */,
 				C6BFB9E82257867C006EBE36 /* Category.swift in Sources */,
@@ -562,6 +565,7 @@
 				C6CA662122451C6400AA37B6 /* IngredientsTableViewController.swift in Sources */,
 				C6BFB9EA22578938006EBE36 /* CategoriesTableViewController.swift in Sources */,
 				C64CDE22225CC5730048478F /* RecipeFilterTableViewController.swift in Sources */,
+				C64CDE2C225DE4030048478F /* FavouritesHelper.swift in Sources */,
 				C6BFB9E622577BFB006EBE36 /* UIViewController.swift in Sources */,
 				C6CA661422450C0900AA37B6 /* ScannerViewController.swift in Sources */,
 				C6BFB9F2225B6A44006EBE36 /* subscribedCategoriesCellView.swift in Sources */,

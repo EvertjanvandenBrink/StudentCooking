@@ -106,7 +106,7 @@ class IngredientsTableViewController: UITableViewController {
     }
     
     func subscribeOnIngredient(ingredient: Meal) {
-        if Helper.app.subscribedIngredientsContainsIngredient(ingredient) {
+        if SubscriptionsHelper.app.subscribedIngredientsContainsIngredient(ingredient) {
             self.showAlert(title: "Alert!", message: "You have already subscribed on \(ingredient.strIngredient)!")
         } else {
             subscribedIngredients.append(ingredient)

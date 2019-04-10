@@ -148,7 +148,7 @@ class RecipesTableViewController: UITableViewController {
     }
     
     func addToFavourites(recipe: Recipe) {
-        if Helper.app.favouriteRecipesContainsRecipe(recipe) {
+        if FavouritesHelper.app.favouriteRecipesContainsRecipe(recipe) {
             self.showAlert(title: "Alert!", message: "Recipe is already a favourite!")
         } else {
             favouriteRecipes.append(recipe)
