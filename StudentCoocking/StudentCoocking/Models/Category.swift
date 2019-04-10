@@ -17,3 +17,10 @@ struct Category: Codable {
     let strCategoryThumb: String
     let strCategoryDescription: String
 }
+
+extension Category: Equatable {
+    static func == (lhs: Category, rhs: Category) -> Bool {
+        return lhs.idCategory == rhs.idCategory &&
+            lhs.strCategory == rhs.strCategory
+    }
+}

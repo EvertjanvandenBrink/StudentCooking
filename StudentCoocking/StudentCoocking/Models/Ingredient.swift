@@ -19,3 +19,10 @@ struct Meal: Codable {
     let strIngredient, idIngredient: String
     let strDescription, strType: String?
 }
+
+extension Meal: Equatable {
+    static func == (lhs: Meal, rhs: Meal) -> Bool {
+        return lhs.idIngredient == rhs.idIngredient &&
+            lhs.strIngredient == rhs.strIngredient
+    }
+}

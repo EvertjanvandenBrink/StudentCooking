@@ -32,7 +32,7 @@ class JSONParser {
     }
     
     func subscribeOnIngredient(ingredient: Meal) {
-        if !Helper.app.subscribedIngredientsContainsIngredient(ingredient) {
+        if !SubscriptionsHelper.app.subscribedIngredientsContainsIngredient(ingredient) {
             subscribedIngredients.append(ingredient)
         }
     }

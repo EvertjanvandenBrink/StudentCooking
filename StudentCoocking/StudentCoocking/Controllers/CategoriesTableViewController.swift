@@ -88,7 +88,7 @@ class CategoriesTableViewController: UITableViewController {
     }
     
     func subscribeOnCategory(category: Category) {
-        if Helper.app.subscribedCategoriesContainsCategory(category) {
+        if SubscriptionsHelper.app.subscribedCategoriesContainsCategory(category) {
             self.showAlert(title: "Alert!", message: "You have already subscribed on \(category.strCategory)!")
         } else {
             subscribedCategories.append(category)

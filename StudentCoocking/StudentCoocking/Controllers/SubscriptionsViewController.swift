@@ -106,7 +106,7 @@ extension SubscriptionsViewController: UITableViewDataSource, UITableViewDelegat
         if tableView == subscribedCategoriesTableView {
             let deleteAction = UITableViewRowAction(style: .normal, title: "Delete") { (action, indexPath) in
                 let category = subscribedCategories[indexPath.row]
-                Helper.app.deleteFromSubscribedCategories(category: category)
+                SubscriptionsHelper.app.deleteFromSubscribedCategories(category: category)
                 self.updateUI(self.subscribedCategoriesTableView)
             }
             deleteAction.backgroundColor = UIColor.red
@@ -114,7 +114,7 @@ extension SubscriptionsViewController: UITableViewDataSource, UITableViewDelegat
         } else {
             let deleteAction = UITableViewRowAction(style: .normal, title: "Delete") { (action, indexPath) in
                 let ingredient = subscribedIngredients[indexPath.row]
-                Helper.app.deleteFromSubscribedIngredients(ingredient: ingredient)
+                SubscriptionsHelper.app.deleteFromSubscribedIngredients(ingredient: ingredient)
                 self.updateUI(self.subscribedIngredientsTableView)
             }
             deleteAction.backgroundColor = UIColor.red
