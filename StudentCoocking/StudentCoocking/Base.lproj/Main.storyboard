@@ -439,7 +439,7 @@
             </objects>
             <point key="canvasLocation" x="2688.8000000000002" y="219.94002998500753"/>
         </scene>
-        <!--Recipes Table View Controller-->
+        <!--Recipes-->
         <scene sceneID="LBo-7y-Oua">
             <objects>
                 <tableViewController storyboardIdentifier="recipesTableViewController" id="lmV-pD-LR5" customClass="RecipesTableViewController" customModule="StudentCoocking" customModuleProvider="target" sceneMemberID="viewController">
@@ -465,7 +465,7 @@
                             <outlet property="delegate" destination="lmV-pD-LR5" id="6RQ-7q-vRY"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="jSE-mF-UBL">
+                    <navigationItem key="navigationItem" title="Recipes" id="jSE-mF-UBL">
                         <barButtonItem key="rightBarButtonItem" image="filter" id="P5s-CG-mwy">
                             <connections>
                                 <action selector="filterClicked:" destination="lmV-pD-LR5" id="deR-jg-z4V"/>
@@ -579,7 +579,7 @@
         <!--HomeViewController-->
         <scene sceneID="8eN-uL-n9G">
             <objects>
-                <viewController title="HomeViewController" id="ZdF-FC-ROe" customClass="HomeViewController" customModule="StudentCoocking" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="homeViewController" title="HomeViewController" id="ZdF-FC-ROe" customClass="HomeViewController" customModule="StudentCoocking" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="UA2-ej-Pbj">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -625,7 +625,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="7Sp-3X-1CW"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Scaner" id="9gh-EJ-3Nm">
+                    <navigationItem key="navigationItem" title="Scanner" id="9gh-EJ-3Nm">
                         <barButtonItem key="backBarButtonItem" title="Back" id="O4m-JK-jV6"/>
                     </navigationItem>
                 </viewController>
@@ -922,6 +922,6 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="bpi-5Y-mSE"/>
-        <segue reference="k9D-KO-JOW"/>
+        <segue reference="fuJ-cH-HYF"/>
     </inferredMetricsTieBreakers>
 </document>

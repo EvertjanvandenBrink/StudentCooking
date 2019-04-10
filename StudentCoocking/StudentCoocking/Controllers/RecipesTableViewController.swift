@@ -32,6 +32,7 @@ class RecipesTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.tableView.accessibilityIdentifier = "recipesTableViewIdentifier"
         imageCache.name = "Recipe image cache"
         
         if (self.recipes.count < 1) {
@@ -70,6 +71,10 @@ class RecipesTableViewController: UITableViewController {
     }
     
     func configure(cell: UITableViewCell, forItemAt indexPath: IndexPath) {
+        cell.isAccessibilityElement = true
+        cell.accessibilityLabel = cell.textLabel!.text
+        cell.accessibilityIdentifier = "myCell_\(indexPath.row)"
+        
         let recipe = recipes[indexPath.row]
         let urlString = recipe.strMealThumb!
         

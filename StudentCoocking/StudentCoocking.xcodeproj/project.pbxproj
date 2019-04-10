@@ -18,6 +18,7 @@
 		C64CDE28225CEB080048478F /* JSONParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = C64CDE27225CEB080048478F /* JSONParser.swift */; };
 		C64CDE2A225DE3780048478F /* SubscriptionsHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = C64CDE29225DE3780048478F /* SubscriptionsHelper.swift */; };
 		C64CDE2C225DE4030048478F /* FavouritesHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = C64CDE2B225DE4030048478F /* FavouritesHelper.swift */; };
+		C64CDE30225DEB900048478F /* SubscriptionsHelperTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C64CDE2F225DEB900048478F /* SubscriptionsHelperTests.swift */; };
 		C673491D2256426F00C29FF9 /* SearchTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C673491C2256426F00C29FF9 /* SearchTableViewController.swift */; };
 		C673491F2256477500C29FF9 /* FavouriteRecipesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C673491E2256477500C29FF9 /* FavouriteRecipesViewController.swift */; };
 		C68578E3224508FC004217D5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C68578E2224508FC004217D5 /* AppDelegate.swift */; };
@@ -26,7 +27,6 @@
 		C68578EA224508FC004217D5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C68578E8224508FC004217D5 /* Main.storyboard */; };
 		C68578EC224508FD004217D5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C68578EB224508FD004217D5 /* Assets.xcassets */; };
 		C68578EF224508FD004217D5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C68578ED224508FD004217D5 /* LaunchScreen.storyboard */; };
-		C68578FA224508FD004217D5 /* StudentCoockingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C68578F9224508FD004217D5 /* StudentCoockingTests.swift */; };
 		C6857905224508FD004217D5 /* StudentCoockingUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6857904224508FD004217D5 /* StudentCoockingUITests.swift */; };
 		C6BFB9E4225779D9006EBE36 /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6BFB9E3225779D9006EBE36 /* Helper.swift */; };
 		C6BFB9E622577BFB006EBE36 /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6BFB9E522577BFB006EBE36 /* UIViewController.swift */; };
@@ -79,6 +79,7 @@
 		C64CDE27225CEB080048478F /* JSONParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONParser.swift; sourceTree = "<group>"; };
 		C64CDE29225DE3780048478F /* SubscriptionsHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscriptionsHelper.swift; sourceTree = "<group>"; };
 		C64CDE2B225DE4030048478F /* FavouritesHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouritesHelper.swift; sourceTree = "<group>"; };
+		C64CDE2F225DEB900048478F /* SubscriptionsHelperTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscriptionsHelperTests.swift; sourceTree = "<group>"; };
 		C673491C2256426F00C29FF9 /* SearchTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTableViewController.swift; sourceTree = "<group>"; };
 		C673491E2256477500C29FF9 /* FavouriteRecipesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouriteRecipesViewController.swift; sourceTree = "<group>"; };
 		C68578DF224508FC004217D5 /* StudentCoocking.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StudentCoocking.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -90,7 +91,6 @@
 		C68578EE224508FD004217D5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C68578F0224508FD004217D5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C68578F5224508FD004217D5 /* StudentCoockingTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = StudentCoockingTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		C68578F9224508FD004217D5 /* StudentCoockingTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentCoockingTests.swift; sourceTree = "<group>"; };
 		C68578FB224508FD004217D5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C6857900224508FD004217D5 /* StudentCoockingUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = StudentCoockingUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C6857904224508FD004217D5 /* StudentCoockingUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentCoockingUITests.swift; sourceTree = "<group>"; };
@@ -223,8 +223,8 @@
 		C68578F8224508FD004217D5 /* StudentCoockingTests */ = {
 			isa = PBXGroup;
 			children = (
-				C68578F9224508FD004217D5 /* StudentCoockingTests.swift */,
 				C68578FB224508FD004217D5 /* Info.plist */,
+				C64CDE2F225DEB900048478F /* SubscriptionsHelperTests.swift */,
 			);
 			path = StudentCoockingTests;
 			sourceTree = "<group>";
@@ -578,7 +578,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C68578FA224508FD004217D5 /* StudentCoockingTests.swift in Sources */,
+				C64CDE30225DEB900048478F /* SubscriptionsHelperTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
