@@ -29,6 +29,13 @@ class RecipeFilterTableViewController: UITableViewController {
         }
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        guard let statusBar = UIApplication.shared.value(forKeyPath: "statusBarWindow.statusBar") as? UIView else { return }
+        
+        statusBar.backgroundColor = #colorLiteral(red: 1, green: 0.662745098, blue: 0.07843137255, alpha: 1)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         TheMealDBService.shared.fetchAllCategories(completionHandler: completionFetchCategories)

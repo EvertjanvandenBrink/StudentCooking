@@ -11,7 +11,6 @@ import UIKit
 class CategoriesDetailViewController: UIViewController {
     var category:Category!
     
-    @IBOutlet var nameLabel: UILabel!
     @IBOutlet var descriptionView: UITextView!
     @IBOutlet var thumbmail: UIImageView!
     
@@ -23,8 +22,8 @@ class CategoriesDetailViewController: UIViewController {
     }
     
     func updateUI() {
-        nameLabel?.text = category.strCategory
         descriptionView?.text = category.strCategoryDescription
+        self.title = category.strCategory
         
         if let url = URL(string: category.strCategoryThumb) {
             TheMealDBService.shared.fetchImage(url: url) { (image) in

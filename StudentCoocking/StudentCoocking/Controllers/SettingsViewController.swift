@@ -44,7 +44,7 @@ class SettingsViewController: UIViewController {
         if (defaults.string(forKey: "creators") != nil) {
             creators.text = defaults.string(forKey: "creators")
         } else {
-            creators.text = "Jesper Menting & Evertjan van den Brink"
+            creators.text = "J. Menting & E. v.d Brink"
         }
     }
     
