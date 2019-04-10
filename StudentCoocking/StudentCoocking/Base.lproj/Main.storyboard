@@ -733,7 +733,6 @@
                     <connections>
                         <segue destination="ZdF-FC-ROe" kind="relationship" relationship="viewControllers" id="T1G-Yr-rjr"/>
                         <segue destination="gMO-Dv-UFz" kind="relationship" relationship="viewControllers" id="1WL-Oe-eA2"/>
-                        <segue destination="QtN-Tg-nly" kind="relationship" relationship="viewControllers" id="T1n-tW-klb"/>
                         <segue destination="Afe-ZC-r7Y" kind="relationship" relationship="viewControllers" id="pS0-pB-HBv"/>
                         <segue destination="rXv-fj-6s5" kind="relationship" relationship="viewControllers" id="Ngv-S8-XRo"/>
                         <segue destination="1cq-Rb-esq" kind="relationship" relationship="viewControllers" id="nd9-e9-iS2"/>
@@ -881,7 +880,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="66I-c2-gSp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1028" y="219.94002998500753"/>
+            <point key="canvasLocation" x="1028" y="220"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="rWt-Yl-dT1">
