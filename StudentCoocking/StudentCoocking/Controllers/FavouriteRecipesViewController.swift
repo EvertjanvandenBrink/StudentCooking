@@ -95,9 +95,7 @@ class FavouriteRecipesViewController: UITableViewController {
             let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
             let recipesDetailViewController = storyBoard.instantiateViewController(withIdentifier: "recipesDetailViewController") as! RecipesDetailViewController
             recipesDetailViewController.recipe = favouriteRecipes[indexPath.row]
-            
-            self.dismiss(animated: true, completion: nil)
-            self.present(recipesDetailViewController, animated: true, completion: nil)
+            self.navigationController?.pushViewController(recipesDetailViewController, animated: true)
         }
         viewDetailsAction.backgroundColor = UIColor.blue
         

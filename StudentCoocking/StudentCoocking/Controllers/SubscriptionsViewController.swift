@@ -77,9 +77,7 @@ extension SubscriptionsViewController: UITableViewDataSource, UITableViewDelegat
     
     func completionFetchRecipes(recipes: [Recipe]?, error: Error?) {
         if let recipes = recipes {
-            print("Recipes: \(recipes)")
             self.recipesTableViewController?.recipes = recipes
-            
             self.recipesTableViewController?.reloadData = true
             self.recipesTableViewController?.updateUI(with: recipes)
         }
